@@ -10,9 +10,6 @@ source 'https://rubygems.org'
   gem 'aws-sdk', '<2.0'
   gem 'paperclip-av-transcoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-# To run on heroku 
-gem 'rails_12factor'
-########
 gem 'rails', '4.2.6'
 # Use postgresql as the database for Active Record
 gem 'pg', '~> 0.15'
@@ -56,5 +53,5 @@ group :development do
   gem 'spring'
 end
 
-
+# To run on heroku
 gem 'rails_12factor', group: :production
