@@ -1,0 +1,15 @@
+<%= form_for(@episode, multipart: true) do |f| %>
+  <div class="field">
+
+    <%= f.label :title %>
+    <%= f.text_field :title %>
+  </div>
+  <div class="field">
+    <%= f.label :video %>
+    <%= f.file_field :video %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+    <%= link_to 'Cancel', root_path, class: 'button' %>
+  </div>
+<% end %>
