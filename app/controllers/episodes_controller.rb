@@ -13,7 +13,7 @@ class EpisodesController < ApplicationController
 			flash[:alert] = "There was a problem"
 		end
 
-		rediect_to root_path
+		redirect_to root_path
 	end
 
 	private
