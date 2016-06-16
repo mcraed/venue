@@ -1,0 +1,10 @@
+<% @episodes.each do |e| %>
+	<div class="episode">
+		<%= e.title %>
+		<%= e.description %>
+		<div class="video">
+			<%= video_tag e.video.url, controls: true %>
+		</div>
+	</div>
+
+<% end %>

@@ -16,6 +16,10 @@ class EpisodesController < ApplicationController
 		redirect_to root_path
 	end
 
+	def index
+		@episodes = Episode.all
+	end
+
 	private
 
 	def episode_params 

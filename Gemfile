@@ -6,8 +6,8 @@ source 'https://rubygems.org'
 # Paperclip with AWS tutorial => https://www.youtube.com/watch?v=opiDMh25wQM
 	# Figaro enables access to environment variables throughout program
   gem 'figaro', '~>0.7'
-  gem 'paperclip'
   gem 'aws-sdk', '<2.0'
+  gem 'paperclip'
   gem 'paperclip-av-transcoder'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.2.6'
