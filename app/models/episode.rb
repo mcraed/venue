@@ -1,8 +1,12 @@
 class Episode < ActiveRecord::Base
 
+  belongs_to :show
+  has_many :users, through: :likes
+  has_many :contributors, through: :contributor_episodes
+
   has_attached_file :video, styles: {
   	mp4video: {
-  		geometry: '640x480', format: 'flv',
+  		geometry: '400x360', format: 'flv',
   	},
   	preview: {
   		geometry: '300x300>', format: 'jpg', time: 10
@@ -19,5 +23,7 @@ class Episode < ActiveRecord::Base
 
   validates_attachment_content_type :video, content_type: /\Avideo\/.*\Z/  
   validates_attachment_file_name :video, matches: [/3gp\Z/, /mp4\Z/, /flv\Z/]  
+
+  validates_presence_of :video
 
 end

@@ -11,10 +11,42 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160615192059) do
+ActiveRecord::Schema.define(version: 20160617061901) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "contributor_episodes", force: :cascade do |t|
+    t.integer "contributor_id_id"
+    t.integer "episode_id_id"
+  end
+
+  add_index "contributor_episodes", ["contributor_id_id"], name: "index_contributor_episodes_on_contributor_id_id", using: :btree
+  add_index "contributor_episodes", ["episode_id_id"], name: "index_contributor_episodes_on_episode_id_id", using: :btree
+
+  create_table "contributor_shows", force: :cascade do |t|
+    t.integer "contributor_id"
+    t.integer "show_id"
+  end
+
+  add_index "contributor_shows", ["contributor_id"], name: "index_contributor_shows_on_contributor_id", using: :btree
+  add_index "contributor_shows", ["show_id"], name: "index_contributor_shows_on_show_id", using: :btree
+
+  create_table "contributors", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.boolean  "lead_contributor"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "twitter"
+    t.text     "bio"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
 
   create_table "episodes", force: :cascade do |t|
     t.string   "title"
@@ -26,6 +58,67 @@ ActiveRecord::Schema.define(version: 20160615192059) do
     t.string   "video_content_type"
     t.integer  "video_file_size"
     t.datetime "video_updated_at"
+    t.integer  "show_id"
   end
 
+  add_index "episodes", ["show_id"], name: "index_episodes_on_show_id", using: :btree
+
+  create_table "likes", force: :cascade do |t|
+    t.integer "user_id"
+    t.integer "episode_id"
+  end
+
+  add_index "likes", ["episode_id"], name: "index_likes_on_episode_id", using: :btree
+  add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
+
+  create_table "show_likes", force: :cascade do |t|
+    t.integer "users_id"
+    t.integer "shows_id"
+  end
+
+  add_index "show_likes", ["shows_id"], name: "index_show_likes_on_shows_id", using: :btree
+  add_index "show_likes", ["users_id"], name: "index_show_likes_on_users_id", using: :btree
+
+  create_table "show_tags", force: :cascade do |t|
+    t.integer "show_id_id"
+    t.integer "tag_id_id"
+  end
+
+  add_index "show_tags", ["show_id_id"], name: "index_show_tags_on_show_id_id", using: :btree
+  add_index "show_tags", ["tag_id_id"], name: "index_show_tags_on_tag_id_id", using: :btree
+
+  create_table "shows", force: :cascade do |t|
+    t.string   "name"
+    t.datetime "created_at",         null: false
+    t.datetime "updated_at",         null: false
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "tags", force: :cascade do |t|
+    t.string   "name"
+    t.string   "image_file_name"
+    t.string   "image_content_type"
+    t.integer  "image_file_size"
+    t.datetime "image_updated_at"
+  end
+
+  create_table "users", force: :cascade do |t|
+    t.string   "fname"
+    t.string   "lname"
+    t.string   "email"
+    t.string   "password_digest"
+    t.string   "twitter"
+    t.text     "bio"
+    t.datetime "created_at",          null: false
+    t.datetime "updated_at",          null: false
+    t.string   "avatar_file_name"
+    t.string   "avatar_content_type"
+    t.integer  "avatar_file_size"
+    t.datetime "avatar_updated_at"
+  end
+
+  add_foreign_key "episodes", "shows"
 end
