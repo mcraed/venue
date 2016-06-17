@@ -1,6 +1,7 @@
 source 'https://rubygems.org'
 
-
+# Enabling secure sessions (password_digest)
+  gem 'bcrypt'
 # Enabling flash messages
   gem 'rack-flash3'
 # Paperclip with AWS tutorial => https://www.youtube.com/watch?v=opiDMh25wQM

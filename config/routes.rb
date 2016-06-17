@@ -1,8 +1,17 @@
 Rails.application.routes.draw do
 
-  root 'episodes#new'
+  root 'contributors#new'
 
+  resources :tags
   resources :episodes
+  resources :shows
+  resources :users
+  resources :contributors
+
+  post 'sessions/create'
+  # contributor login page
+  get 'sessions/cont_new'
+  post 'sessions/cont_create'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 
