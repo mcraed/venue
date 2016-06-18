@@ -49,7 +49,7 @@ class ContributorsController < ApplicationController
 		@contributor.destroy
 		reset_session
 		current_contributor = nil 
-		flash[:alert] = "Succesfully logged out."
+		flash[:alert] = "I'm assuming you were fired?"
 		redirect_to root_path
 	end
 

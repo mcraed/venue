@@ -1,4 +1,4 @@
-<div class="contributor-up-form">
+<div class="update-form">
 	<%= form_for @contributor do |f| %>
 		<div class="Sign-up-field">
 			<%= f.label "First Name" %>
@@ -51,3 +51,10 @@
 
 	<% end %>
 </div>
+<br />
+<br />
+<br />
+<div>
+	<%= button_to "Delete Account", {controller: :contributors, action: :destroy}, {method: :delete} %>
+</div>
+

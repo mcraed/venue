@@ -26,12 +26,28 @@ class UsersController < ApplicationController
 		@users = User.all
 	end
 
+	def edit
+		@user = User.find(params[:id])
+	end
+
+	def update
+		@user = User.find(params[:id])
+
+		if @user.update_attributes(user_params)
+			flash[:notice] = "Your Profile Was Successfully Updated!"
+			redirect_to user_path(@user)
+		else
+			flash[:alert] = "Update Failed; Check Your Fields And Try Again."
+			render 'edit'
+		end
+	end
+
 	def destroy
 		@user = User.find(params[:id])
 		@user.destroy
 		reset_session
 		current_user = nil
-		flash[:alert] = "See you next time!"
+		flash[:alert] = "Account Deleted; Peace And Love!"
 		redirect_to root_path
 	end
 
