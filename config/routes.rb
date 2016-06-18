@@ -1,7 +1,5 @@
 Rails.application.routes.draw do
 
-  root 'sessions#new'
-  
   resources :tags
   resources :episodes
   resources :shows

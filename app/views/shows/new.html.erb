@@ -1,0 +1,23 @@
+<div>
+
+	<h2>Create A Show</h2>
+	<%= form_for @show do |f| %>
+
+		<div>
+			<%= f.label :name %>
+			<%= f.text_field :name %>
+		</div>
+
+		<div>
+			<%= f.label :image %>
+			<%= f.file_field :image %>
+		</div>
+
+		<br />
+		<div>
+			<%= f.submit %>
+		</div>
+	<% end %>
+
+	<!-- episode(s) upload partial? -->
+</div>
