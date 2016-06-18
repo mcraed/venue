@@ -1,4 +1,5 @@
-<%= form_for(@episode, multipart: true) do |f| %>
+<%= form_for @episode, url: show_episodes_path(@show.id), multipart: true do |f| %>
+
   <div class="field">
 
     <%= f.label :title %>

@@ -1,18 +1,25 @@
 Rails.application.routes.draw do
 
-  resources :tags
-  resources :episodes
+  resources :shows do
+    resources :episodes 
+  end
+
   resources :shows
+  resources :episodes
   resources :users
   resources :contributors
 
+
+  # user sessions
   get 'login' => 'sessions#new'
   post 'login' => 'sessions#create'
-
+  # contributor sessions
   get 'signin' => 'sessions#contributor_new'
   post 'signin' => 'sessions#contributor_create'
+  
   delete 'logout' => 'sessions#destroy'
 
+  root 'sessions#new'
 
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

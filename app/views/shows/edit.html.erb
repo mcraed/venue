@@ -1,0 +1,21 @@
+<div>
+	<h3>Edit Show</h3>
+	<%= form_for @show do |f| %>
+
+	<div>
+		<%= f.label :name %>
+		<%= f.text_area :name, value: @show.name %>
+	</div>
+
+	<div>
+		<%= f.submit %>
+	</div>
+
+	<% end %>
+	<br />
+	<br />
+	<h4>Add an episode!</h4>
+	<div>	
+		<%= render 'episodes/new' %>
+	</div>
+</div>

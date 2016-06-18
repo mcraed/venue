@@ -5,7 +5,8 @@ class EpisodesController < ApplicationController
 	end
 
 	def create
-		@episode = Episode.new(episode_params)
+		@show = Show.where(:id == params[:id]).last
+		@episode = @show.episodes.build(episode_params)
 
 		if @episode.save
 			flash[:notice] = "Video successfully uploaded"
@@ -13,7 +14,7 @@ class EpisodesController < ApplicationController
 			flash[:alert] = "There was a problem"
 		end
 
-		redirect_to root_path
+		redirect_to show_path(@show.id)
 	end
 
 	def index

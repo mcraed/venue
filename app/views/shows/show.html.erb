@@ -1,2 +1,12 @@
-<h1>Shows#show</h1>
-<p>Find me in app/views/shows/show.html.erb</p>
+<div>
+	<h2><%= @show.name %></h2>
+
+	<% @show.episodes.each do |e| %>
+		<div>
+			<div>
+				<%= e.title %>
+			</div>
+			<%= video_tag e.video.url, controls: true%>
+		</div>
+	<% end %>
+</div>

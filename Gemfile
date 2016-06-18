@@ -1,5 +1,6 @@
 source 'https://rubygems.org'
-
+# debugging
+  gem "pry"
 # Enabling secure sessions (password_digest)
   gem 'bcrypt'
 # Enabling flash messages

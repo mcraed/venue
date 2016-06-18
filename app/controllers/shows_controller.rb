@@ -10,7 +10,7 @@ class ShowsController < ApplicationController
 
 		if @show.save
 			flash[:notice] = "Success"
-			redirect_to show_path(@show)
+			redirect_to edit_show_path(@show)
 		else
 			flash[:alert] = "Failed"
 			render 'new'
@@ -27,6 +27,8 @@ class ShowsController < ApplicationController
 
   def edit
   	@show = Show.find(params[:id])
+  	   @episode = Episode.new
+
   end
 
   def update
@@ -38,7 +40,7 @@ class ShowsController < ApplicationController
   		flash[:alert] = "Failed"
   	end
 
-  	redirect_to show_path(@show)
+  	redirect_to show_path
   end
 
   def destroy
