@@ -1,0 +1,16 @@
+<div>
+	<%= form_for(:session, url: signin_path) do |f| %>
+		<h2>Contributor Sign In</h2>
+		<div>
+			<%= f.label :aka %>
+			<%= f.text_field :aka %>
+		</div>
+		<div>
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		<div>
+		<div>
+			<%= f.submit %>
+		</div>
+	<% end %>
+</div>

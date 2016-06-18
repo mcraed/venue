@@ -1,0 +1,53 @@
+<div class="contributor-up-form">
+	<%= form_for @contributor do |f| %>
+		<div class="Sign-up-field">
+			<%= f.label "First Name" %>
+			<%= f.text_field :fname %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label "Last Name" %>
+			<%= f.text_field :lname %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label "AKA (Optional)" %>
+			<%= f.text_field :aka %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label :email %>
+			<%= f.email_field :email %>
+		</div>	
+
+		<div class="Sign-up-field">
+			<%= f.label :password %>
+			<%= f.password_field :password %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label :password_confirmation %>
+			<%= f.password_field :password_confirmation %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label "Profile Picture" %>
+			<%= f.file_field :avatar %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label "Twitter" %>
+			<%= f.text_field :twitter %>
+		</div>
+
+		<div class="Sign-up-field">
+			<%= f.label :bio %>
+			<%= f.text_area :bio %>
+		</div>
+
+		<div id="actions">
+			<%= f.submit %>
+		</div>
+
+	<% end %>
+</div>

@@ -11,7 +11,6 @@ class Contributor < ActiveRecord::Base
 	 default_url: "/images/contributor_default.jpg"
 
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-	# validates_presence_of :avatar
+	validates :password, length: {minimum: 5}
 	validates_confirmation_of :password
-	validates_presence_of :password, on: :create
 end

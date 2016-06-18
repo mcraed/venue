@@ -1,15 +1,16 @@
 class SessionsController < ApplicationController
 
+	include SessionsHelper
 	def new
-		@user = User.new
+		
 	end
 
 	def create
-		@user = User.where(username: params[:username]).last
+		@user = User.where(username: params[:session][:username]).last
 
-		if @user && @user.authenticate(params[:password])
+		if @user && @user.authenticate(params[:session][:password])
 			login_user(@user)
-			redirect_to root_path
+			redirect_to user_path(@user)
 		else
 			flash[:alert] = "Login failed. If you don't have an account yet, create your free account below the form!"
 			render 'new'
@@ -17,15 +18,15 @@ class SessionsController < ApplicationController
 	end
 
 	def contributor_new
-		@cont = Contributor.new
+		
 	end
 
 	def contributor_create
-		@cont = Contributor.where(key: params[:key]).last
+		@contributor = Contributor.where(key: params[:session][:key]).last
 
-		if @cont && @cont.authenticate(params[:password])
-			contributor_login(@cont)
-			render @cont
+		if @contributor && @contributor.authenticate(params[:session][:password])
+			contributor_login(@contributor)
+			redirect_to contributor_path(@contributor)
 		else
 			flash[:alert] = "Failed. Check your credentials or contact Venue for support"
 			render 'new'
