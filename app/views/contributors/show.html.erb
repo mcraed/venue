@@ -5,3 +5,11 @@
 
 <!-- run if statement to display tweets by full name or aka  -->
 <a class="twitter-timeline" data-theme="dark" href=<%= @contributor.twitter %> >Tweets by <%= fullname(@contributor) %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+<% if current_contributor == @contributor %>
+
+	<div>
+		<%= render 'shows/new' %>
+	</div>
+<% end %>

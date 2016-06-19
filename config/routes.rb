@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
 
+  resources :contributors do
+    resources :shows
+  end
+
   resources :shows do
     resources :episodes 
   end

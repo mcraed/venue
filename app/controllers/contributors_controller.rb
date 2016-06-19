@@ -22,6 +22,7 @@ class ContributorsController < ApplicationController
 
 	def show
 		@contributor = Contributor.find(params[:id])
+		@show = Show.new
 	end
 
 	def index

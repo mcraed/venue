@@ -1,2 +1,8 @@
-<h1>Shows#index</h1>
-<p>Find me in app/views/shows/index.html.erb</p>
+<% @shows.each do |s| %>
+	<div>	
+		<%= s.name %>
+	</div>
+	<div>
+		<%= image_tag s.image.url(:thumb) %>
+	</div>	
+<% end %>

@@ -1,14 +1,18 @@
 class ShowsController < ApplicationController
 
+  include ApplicationHelper
+
 	def new
 		@show = Show.new
-		@episode = Episode.new
+    @contributor = current_contributor
 	end
 
 	def create
 		@show = Show.new(show_params)
+    @contributor = current_contributor
 
 		if @show.save
+      @contributor.shows << @show
 			flash[:notice] = "Success"
 			redirect_to edit_show_path(@show)
 		else
@@ -27,7 +31,7 @@ class ShowsController < ApplicationController
 
   def edit
   	@show = Show.find(params[:id])
-  	   @episode = Episode.new
+  	@episode = Episode.new
 
   end
 

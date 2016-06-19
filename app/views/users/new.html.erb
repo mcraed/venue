@@ -1,51 +1,51 @@
-<div class="user-up-form">
+<div>
 	<%= form_for @user do |f| %>
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label "First Name" %>
 			<%= f.text_field :fname %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label "Last Name" %>
 			<%= f.text_field :lname %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label :username %>
 			<%= f.text_field :username %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label :email %>
 			<%= f.email_field :email %>
 		</div>	
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label :password %>
 			<%= f.password_field :password %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label :password_confirmation %>
 			<%= f.password_field :password_confirmation %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label "Profile Picture" %>
 			<%= f.file_field :avatar %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label "Twitter" %>
 			<%= f.text_field :twitter %>
 		</div>
 
-		<div class="Sign-up-field">
+		<div>
 			<%= f.label :bio %>
 			<%= f.text_area :bio %>
 		</div>
 
-		<div id="actions">
+		<div>
 			<%= f.submit %>
 		</div>
 

@@ -1,6 +1,6 @@
 <div>
 	<h2><%= @show.name %></h2>
-
+	<%= @show.image.url(:medium) %>
 	<% @show.episodes.each do |e| %>
 		<div>
 			<div>

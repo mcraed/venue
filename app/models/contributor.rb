@@ -1,6 +1,7 @@
 class Contributor < ActiveRecord::Base
-	has_many :Episodes, through: :contrubutor_episodes
+	has_many :contributor_shows, class_name: ContributorShow
 	has_many :shows, through: :contributor_shows
+	has_many :episodes, through: :contrubutor_episodes
 	has_secure_password
 
 	has_attached_file :avatar, styles: {
