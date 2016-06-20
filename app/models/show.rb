@@ -1,6 +1,7 @@
 class Show < ActiveRecord::Base
-	has_many :tags, through: :show_tags   
+
 	has_many :episodes 
+	has_many :show_likes, class_name: ShowLike
 	has_many :users, through: :show_likes
 	has_many :contributor_shows, class_name: ContributorShow
 	has_many :contributors, through: :contributor_shows

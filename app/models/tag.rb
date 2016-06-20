@@ -1,6 +1,4 @@
 class Tag < ActiveRecord::Base
-  has_many :show_id, through: :show_tags
-
   has_attached_file :image, styles: {
 		thumb: "100x100>",
 		medium: "300x300>"

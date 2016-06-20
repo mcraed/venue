@@ -1,5 +1,4 @@
 class ShowsController < ApplicationController
-
   include ApplicationHelper
 
 	def new
@@ -23,6 +22,7 @@ class ShowsController < ApplicationController
 
   def show
   	@show = Show.find(params[:id])
+    @episode = Episode.new
   end
   
   def index

@@ -1,0 +1,26 @@
+<% @contributors.each do |c| %>
+
+	<div>
+		<% if c.aka %>
+			<a href=<%= contributor_path(c.id) %> ><%= c.aka %></a>
+		<% else %>
+			<a href=<%= contributor_path(c.id) %> ><%= fullname(c) %></a>
+		<% end %> 
+	</div>
+	<div>
+	<a href=<%= contributor_path(c.id) %> ><%= image_tag c.avatar.url(:thumb) %></a>
+	</div>
+	<% if c.shows %>
+	<div>
+		<% c.contributor_shows.each do |s| %>
+			<%= link_to Show.find(s.show_id).name, contributor_show_path(c.id, s.id) %>
+		<% end %>
+	</div>
+	<% else %>
+	<div>
+		Banana
+	</div>
+	<% end %>
+	<br />
+	<br />
+<% end %>

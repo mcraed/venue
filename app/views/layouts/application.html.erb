@@ -12,9 +12,24 @@
 		<div class="alert alert-<%= key %>"><%= value %></div>
 	<% end %>
 
-	<% if current_user || current_contributor %>
-		<%= link_to "Log Out", logout_path, method: :delete %> 
-	<% end %>
+	<div class='nav'>
+		<ul>
+			<!-- add splash page, then root path will be shows index -->
+			<li><%= link_to "Landing", root_path %></li> 
+			<% if current_user %>
+				<li><%= link_to "Home", user_path(current_user.id) %></li>
+			<% elsif current_contributor %>
+				<li><%= link_to "Home", contributor_path(current_contributor.id) %></li>
+			<% else %>
+				<li><%= link_to "Log In/ Sign Up", root_path %></li>
+			<% end %>	
+			<li><%= link_to "Shows", shows_path %></li>
+			<li><%= link_to "Contributors", contributors_path %></li>
+		</ul>
+		<% if current_user || current_contributor %>
+			<%= link_to "Log Out", logout_path, method: :delete %> 
+		<% end %>
+	</div>
 	<div id="app-container">
 		<%= yield %>
 	<div>

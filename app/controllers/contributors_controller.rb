@@ -1,7 +1,8 @@
 class ContributorsController < ApplicationController
 	
 	include SessionsHelper
-
+	include ApplicationHelper
+	require 'date'
 	def new
 		@contributor = Contributor.new
 	end
@@ -10,7 +11,8 @@ class ContributorsController < ApplicationController
 		@contributor = Contributor.new(contributor_params)
 
 		if @contributor
-			@contributor.aka = @contributor.lname + @contributor.fname[0]
+			@contributor.key = @contributor.lname + @contributor.fname[0]
+			@contributor.since = Time.now.strftime("%m/%d/%Y")
 			@contributor.save
 			contributor_login(@contributor)
 			redirect_to @contributor
@@ -34,6 +36,7 @@ class ContributorsController < ApplicationController
 	end
 
 	def update
+		# updating in terminal rollsback for some reason
 		@contributor = Contributor.find(params[:id])
 
 		if @contributor.update_attributes(contributor_params)

@@ -1,4 +1,5 @@
 class User < ActiveRecord::Base
+
 	has_many :episodes, through: :likes
 	has_many :shows, through: :show_likes
 	has_secure_password
