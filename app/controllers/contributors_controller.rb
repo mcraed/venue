@@ -40,6 +40,7 @@ class ContributorsController < ApplicationController
 		@contributor = Contributor.find(params[:id])
 
 		if @contributor.update_attributes(contributor_params)
+			puts 'success!'
 			flash[:notice] = "Your Profile Was Succesfully Updated!"
 			redirect_to contributor_path(@contributor)
 		else
@@ -60,6 +61,6 @@ class ContributorsController < ApplicationController
 	private
 
 	def contributor_params
-		params.require(:contributor).permit(:fname, :lname, :aka, :email, :password, :password_confirmation, :avatar, :twitter, :bio)
+		params.require(:contributor).permit(:fname, :lname, :aka, :email, :avatar, :twitter, :bio)
 	end
 end

@@ -12,6 +12,6 @@ class User < ActiveRecord::Base
 	default_url: "/images/user_default.jpg"
 
 	validates_attachment_content_type :avatar, content_type: /\Aimage\/.*\Z/
-	validates :password, length: {minimum: 5}
+	validates :password, length: {minimum: 5}, allow_nil: true
 	validates_confirmation_of :password
 end

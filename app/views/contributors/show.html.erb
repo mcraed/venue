@@ -5,6 +5,11 @@
 <% end %>
 <%= image_tag @contributor.avatar(:medium) %>
 	<div>
+	<% if @contributor.since %>
+		<h3>Contributor Since <%= @contributor.since %></h3>
+	<% end %>
+	</div>
+	<div>
 		<%= link_to "Edit Profle", edit_contributor_path %>
 	</div>
 <div>
