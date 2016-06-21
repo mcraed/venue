@@ -1,5 +1,13 @@
+<!-- USBA2 see and interact with linked Contest index - icebox submitting for contests -->
+<!-- USBA2 see and interact with linked index of favorited videos and contributors -->
+<!-- Icebox see favorite contributors latest tweets -->
+
 <h2><%= fullname(@user) %></h2>
 
 <h4><%= @user.username %></h4>
 
 <%= image_tag @user.avatar.url(:medium) %>
+<br />
+<br />
+<%= link_to "Edit Profile", edit_user_path %>
+

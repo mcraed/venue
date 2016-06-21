@@ -1,7 +1,7 @@
 class Episode < ActiveRecord::Base
-
   belongs_to :show
   has_many :users, through: :likes
+  has_many :contributor_episodes, class_name: ContributorEpisode
   has_many :contributors, through: :contributor_episodes
 
   has_attached_file :video, styles: {

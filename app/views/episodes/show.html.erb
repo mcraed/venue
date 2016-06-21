@@ -1,0 +1,41 @@
+<!-- have this info display over video and show only on hover -->
+<h3><%= @episode.title %></h3>
+<%= @episode.description %>
+<br />
+<%= video_tag @episode.video.url, controls: true %>
+
+<!-- users can browse other episodes on click without leaving current episode -->
+
+<div>
+	<% @show.episodes.each do |e| %>
+		<div>
+			<!-- episode thumbnail goes here -->
+			<%= e.title %>
+			<br />
+			<br />
+			<%= e.description %>
+		</div>
+		<br />		
+		<br />		
+	<% end %>
+</div>
+
+<div>
+	<% @episode.contributors.each do |c| %>
+		<div>
+			<a href=<%= contributor_path(c.id) %> >
+				<% if c.aka %>
+					<%= c.aka %>
+				<% else %>
+					<%= c.fullname(c) %>
+				<% end %>
+			</a>
+			<br />
+			<a href=<%= contributor_path(c.id) %> >
+				<%= image_tag c.avatar.url(:thumb) %>
+			</a>
+		</div>
+		<br />
+	<% end %>
+</div>
+

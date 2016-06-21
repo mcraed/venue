@@ -1,5 +1,6 @@
 <div>
 	<%= form_for @user do |f| %>
+		<h4>Welcome! Tell us a little about yourself to get started!</h4>
 		<div>
 			<%= f.label "First Name" %>
 			<%= f.text_field :fname %>
@@ -35,15 +36,8 @@
 			<%= f.file_field :avatar %>
 		</div>
 
-		<div>
-			<%= f.label "Twitter" %>
-			<%= f.text_field :twitter %>
-		</div>
+		<!-- users twitter and bio intentionally left out for now -->
 
-		<div>
-			<%= f.label :bio %>
-			<%= f.text_area :bio %>
-		</div>
 
 		<div>
 			<%= f.submit %>

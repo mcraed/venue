@@ -3,16 +3,30 @@
 	<%= form_for @show do |f| %>
 
 	<div>
+		<%= image_tag @show.image.url(:medium) %>
+		<br />
+		<br />
+		<%= f.label "Change Image" %>
+		<%= f.file_field :image %>
+	<div>
+
+	<div>
 		<%= f.label :name %>
 		<%= f.text_area :name, value: @show.name %>
 	</div>
 
 	<div>
-		<%= f.submit %>
+		<%= f.label :desc %>
+		<%= f.text_area :desc, value: @show.desc %>
 	</div>
 
-	<% end %>
+	<div>
+		<%= f.submit %>
+	</div>
+	<% end %>	
 	<br />
+	<br />
+	<%= button_to "Delete Show", {controller: :shows, action: :destroy}, {method: :delete} %>
 	<br />
 	<h4>Add an episode!</h4>
 	<div>	

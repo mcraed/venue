@@ -1,7 +1,8 @@
 class UsersController < ApplicationController
 
 	include ApplicationHelper
-
+	include SessionsHelper
+	
 	def new
 		@user = User.new
 	end
@@ -13,7 +14,7 @@ class UsersController < ApplicationController
 			login_user(@user)
 			redirect_to @user
 		else
-			flash[:alert] = "Verification failed; check your fields and try again. If you don't have an account, create your free account below!"
+			flash[:alert] = "Verification failed; check your fields and try again. If you don't have an account, create one for free!"
 			render 'new'
 		end
 	end

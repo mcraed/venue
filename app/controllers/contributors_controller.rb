@@ -36,7 +36,7 @@ class ContributorsController < ApplicationController
 	end
 
 	def update
-		# updating in terminal rollsback for some reason
+		# create role column?
 		@contributor = Contributor.find(params[:id])
 
 		if @contributor.update_attributes(contributor_params)

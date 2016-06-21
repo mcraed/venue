@@ -1,8 +1,10 @@
 <% @shows.each do |s| %>
+	<!-- mouse over for s.description? -->
 	<div>	
-		<%= s.name %>
+		<div>
+			<a href=<%= show_path(s.id) %> ><%= image_tag s.image.url(:thumb) %></a>
+		</div>
+		<a href=<%= show_path(s.id) %> ><%= s.name %></a>
 	</div>
-	<div>
-		<%= image_tag s.image.url(:thumb) %>
-	</div>	
+	<br />	
 <% end %>

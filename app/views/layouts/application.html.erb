@@ -30,7 +30,34 @@
 			<%= link_to "Log Out", logout_path, method: :delete %> 
 		<% end %>
 	</div>
+
 	<div id="app-container">
+		<% if !current_user || !current_user %>
+			<div>
+				<!-- Log in form, to slide in from left on click --> 	
+				<%= form_for(:session, url: login_path) do |f| %>	
+					<h3>Sign In</h3>
+					<div>
+						<%= f.label :username %>
+						<%= f.text_field :username %>
+					</div>
+					<div>
+						<%= f.label :password %>
+						<%= f.password_field :password %>
+					<div>
+					<div>
+						<%= f.submit controller: :sessions, action: :create %>
+					</div>
+				<% end %>
+
+				<h4><%= link_to "Sign Up", new_user_path %> For Exclusive Contests, Events, and Promotions!</h4>
+			</div>
+
+			<%= link_to "Contributors", signin_path %>
+		<% end %>
+		<br />
+		<br />
+		<!-- take out when structuring! -->
 		<%= yield %>
 	<div>
 

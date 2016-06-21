@@ -1,4 +1,8 @@
-<h2><%= fullname(@contributor) %></h2>
+<% if @contributor.aka %>
+	<h2><%= @contributor.aka %></h2>
+<% else %>
+	<h2><%= fullname(@contributor) %></h2>
+<% end %>
 <%= image_tag @contributor.avatar(:medium) %>
 	<div>
 		<%= link_to "Edit Profle", edit_contributor_path %>
@@ -9,13 +13,19 @@
 		<h4><%= @contributor.bio %></h4>
 	</div>
 </div>
-<!-- run if statement to display tweets by full name or aka  -->
-<a class="twitter-timeline" data-theme="dark" href=<%= @contributor.twitter %> >Tweets by <%= fullname(@contributor) %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
-
-
+<div>
+	<h4>Shows</h4>
+	<% @contributor.contributor_shows.each do |s| %>
+		<div>
+			<h4><%= link_to Show.find(s.show_id).name, show_path(s.show_id) %></h4>
+			<a href=<%= show_path(s.show_id) %> > <%= image_tag Show.find(s.show_id).image.url(:thumb) %> </a>
+		</div>
+	<% end %>
+</div>
 <% if current_contributor == @contributor %>
-
 	<div>
 		<%= render 'shows/new' %>
 	</div>
 <% end %>
+<!-- run if statement to display tweets by full name or aka  -->
+<a class="twitter-timeline" data-width="500" data-dnt="true" data-theme="dark" href=<%= @contributor.twitter %> >Tweets by<% if @contributor.aka %> <%= @contributor.aka %><% else %> <%= fullname(@contributor) %><% end %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

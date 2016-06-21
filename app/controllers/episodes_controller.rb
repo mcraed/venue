@@ -10,11 +10,17 @@ class EpisodesController < ApplicationController
 
 		if @episode.save
 			flash[:notice] = "Video successfully uploaded"
+			redirect_to episode_path(@episode.id)
 		else
-			flash[:alert] = "There was a problem"
+			flash[:alert] = "Failed, video must be in mp4 format."
+			redirect_to show_path(@show.id)
 		end
 
-		redirect_to show_path(@show.id)
+	end
+
+	def show
+		@episode = Episode.find(params[:id])
+		@show = Show.find(@episode.show_id)
 	end
 
 	def index
@@ -24,6 +30,6 @@ class EpisodesController < ApplicationController
 	private
 
 	def episode_params 
-		params.require(:episode).permit(:title, :video)
+		params.require(:episode).permit(:title, :video, :description)
 	end
 end

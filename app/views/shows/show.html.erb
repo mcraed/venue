@@ -1,22 +1,42 @@
 <div>
 	<h2><%= @show.name %></h2>
 	<%= image_tag @show.image.url(:medium) %>
-	<% @show.episodes.each do |e| %>
-		<div>
-			<div>
-				<h3><%= e.title %></h3>
-			</div>
-			<%= video_tag e.video.url, controls: true%>
-		</div>
-	<% end %>
 	<br />
+	<br />
+	<%= @show.desc %>
 	<br />
 	<% if @show.contributors.include? current_contributor %>
-		<div>
-			<h3>Add episode</h3>
-			<%= render 'episodes/new' %>
-		</div>
-		<br />
-		<br />
+		<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
 	<% end %>
+	<div>
+		<h3>Episodes</h3>
+		<% @show.episodes.each do |e| %>
+			<div>
+				<div>
+					<h3><%= e.title %></h3>
+				</div>
+				<!-- index episode by thumbnail, not actual video (find out how) -->
+				<%= video_tag e.video.url, controls: true	 %>
+			</div>
+		<% end %>
+	</div>
+	<div>
+		<h3>Contributors</h3>
+		<% @show.contributors.each do |c| %>
+			<div>
+				<a href=<%= contributor_path(c.id) %> >
+					<% if c.aka %>
+						<%= c.aka %>
+					<% else %>
+						<%= c.fullname(c) %>
+					<% end %>
+				</a>
+				<br />
+				<a href=<%= contributor_path(c.id) %> >
+					<%= image_tag c.avatar.url(:thumb) %>
+				</a>
+			</div>
+			<br />
+		<% end %>
+	</div>
 </div>

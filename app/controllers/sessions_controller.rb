@@ -23,7 +23,7 @@ class SessionsController < ApplicationController
 
 	def contributor_create
 		@contributor = Contributor.where(key: params[:session][:key]).last
-
+		@new_cont = Contributor.new
 		if @contributor && @contributor.authenticate(params[:session][:password])
 			contributor_login(@contributor)
 			redirect_to contributor_path(@contributor)

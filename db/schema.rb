@@ -11,18 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160620184632) do
+ActiveRecord::Schema.define(version: 20160621082202) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "contributor_episodes", force: :cascade do |t|
-    t.integer "contributor_id_id"
-    t.integer "episode_id_id"
+    t.integer "contributor_id"
+    t.integer "episode_id"
   end
 
-  add_index "contributor_episodes", ["contributor_id_id"], name: "index_contributor_episodes_on_contributor_id_id", using: :btree
-  add_index "contributor_episodes", ["episode_id_id"], name: "index_contributor_episodes_on_episode_id_id", using: :btree
+  add_index "contributor_episodes", ["contributor_id"], name: "index_contributor_episodes_on_contributor_id", using: :btree
+  add_index "contributor_episodes", ["episode_id"], name: "index_contributor_episodes_on_episode_id", using: :btree
 
   create_table "contributor_shows", force: :cascade do |t|
     t.integer "contributor_id"
@@ -98,6 +98,7 @@ ActiveRecord::Schema.define(version: 20160620184632) do
     t.string   "image_content_type"
     t.integer  "image_file_size"
     t.datetime "image_updated_at"
+    t.text     "desc"
   end
 
   create_table "tags", force: :cascade do |t|
