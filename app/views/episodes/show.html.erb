@@ -1,5 +1,6 @@
 <!-- have this info display over video and show only on hover -->
 <h3><%= @episode.title %></h3>
+<h5><%= @episode.show.name %></h5>
 <%= @episode.description %>
 <br />
 <%= video_tag @episode.video.url, controls: true %>
@@ -7,10 +8,11 @@
 <!-- users can browse other episodes on click without leaving current episode -->
 
 <div>
+	<h4>All Episodes</h4>
 	<% @show.episodes.each do |e| %>
 		<div>
 			<!-- episode thumbnail goes here -->
-			<%= e.title %>
+			<h3><%= e.title %></h3>
 			<br />
 			<br />
 			<%= e.description %>
@@ -21,6 +23,7 @@
 </div>
 
 <div>
+	<h4>Contributors</h4>
 	<% @episode.contributors.each do |c| %>
 		<div>
 			<a href=<%= contributor_path(c.id) %> >

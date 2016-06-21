@@ -13,7 +13,9 @@
 		<% @show.episodes.each do |e| %>
 			<div>
 				<div>
+				<a href=<%= episode_path(e.id) %> >
 					<h3><%= e.title %></h3>
+				</a>
 				</div>
 				<!-- index episode by thumbnail, not actual video (find out how) -->
 				<%= video_tag e.video.url, controls: true	 %>

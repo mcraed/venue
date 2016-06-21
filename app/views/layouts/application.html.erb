@@ -15,7 +15,7 @@
 	<div class='nav'>
 		<ul>
 			<!-- add splash page, then root path will be shows index -->
-			<li><%= link_to "Landing", root_path %></li> 
+			<li><h2><%= link_to "Venue", root_path %></h2></li> 
 			<% if current_user %>
 				<li><%= link_to "Home", user_path(current_user.id) %></li>
 			<% elsif current_contributor %>
