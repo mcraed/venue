@@ -1,7 +1,7 @@
 class ContributorsController < ApplicationController
 	
-	include SessionsHelper
 	include ApplicationHelper
+	include SessionsHelper
 	require 'date'
 	def new
 		@contributor = Contributor.new
@@ -12,10 +12,10 @@ class ContributorsController < ApplicationController
 
 		if @contributor
 			@contributor.key = @contributor.lname + @contributor.fname[0]
-			@contributor.since = Time.now.strftime("%m/%d/%Y")
+			@contributor.since = Time.now.strftime("%m/%Y")
 			@contributor.save
 			contributor_login(@contributor)
-			redirect_to @contributor
+			redirect_to contributor_path(@contributor.id)
 		else
 			flash[:alert] = "Failed."
 			render 'new'
@@ -42,7 +42,7 @@ class ContributorsController < ApplicationController
 		if @contributor.update_attributes(contributor_params)
 			puts 'success!'
 			flash[:notice] = "Your Profile Was Succesfully Updated!"
-			redirect_to contributor_path(@contributor)
+			redirect_to contributor_path(@contributor.id)
 		else
 			flash[:alert] = "Update Failed; Try Again, Or Contact Venue To Report A Bug."
 			render 'edit'
@@ -61,6 +61,6 @@ class ContributorsController < ApplicationController
 	private
 
 	def contributor_params
-		params.require(:contributor).permit(:fname, :lname, :aka, :email, :avatar, :twitter, :bio)
+		params.require(:contributor).permit(:fname, :lname, :aka, :email, :password, :password_confirmation, :avatar, :twitter, :bio)
 	end
 end

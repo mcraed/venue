@@ -1,4 +1,4 @@
-<% if @contributor.aka %>
+<% if @contributor.aka != "" %>
 	<h2><%= @contributor.aka %></h2>
 <% else %>
 	<h2><%= fullname(@contributor) %></h2>
@@ -33,4 +33,4 @@
 	</div>
 <% end %>
 <!-- run if statement to display tweets by full name or aka  -->
-<a class="twitter-timeline" data-width="500" data-dnt="true" data-theme="dark" href=<%= @contributor.twitter %> >Tweets by<% if @contributor.aka %> <%= @contributor.aka %><% else %> <%= fullname(@contributor) %><% end %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+<a class="twitter-timeline" data-width="500" data-dnt="true" data-theme="dark" href=<%= "https://twitter.com/#{@contributor.twitter}" %> >Tweets by<% if @contributor.aka %> <%= @contributor.aka %><% else %> <%= fullname(@contributor) %><% end %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>

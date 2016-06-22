@@ -1,35 +1,36 @@
 <div>
+	<%= link_to "Back", show_path(@show.id) %>
 	<h3>Edit Show</h3>
 	<%= form_for @show do |f| %>
 
-	<div>
-		<%= image_tag @show.image.url(:medium) %>
-		<br />
-		<br />
-		<%= f.label "Change Image" %>
-		<%= f.file_field :image %>
-	<div>
+		<div>
+			<%= image_tag @show.image.url(:medium) %>
+			<br />
+			<br />
+			<%= f.label "Change Image" %>
+			<%= f.file_field :image %>
+		</div>
 
-	<div>
-		<%= f.label :name %>
-		<%= f.text_area :name, value: @show.name %>
-	</div>
+		<div>
+			<%= f.label :name %>
+			<%= f.text_area :name, value: @show.name %>
+		</div>
 
-	<div>
-		<%= f.label :desc %>
-		<%= f.text_area :desc, value: @show.desc %>
-	</div>
+		<div>
+			<%= f.label :desc %>
+			<%= f.text_area :desc, value: @show.desc %>
+		</div>
 
-	<div>
-		<%= f.submit %>
-	</div>
-	<% end %>	
-	<br />
-	<br />
-	<%= button_to "Delete Show", {controller: :shows, action: :destroy}, {method: :delete} %>
-	<br />
+		<div>
+			<%= f.submit %>
+		</div>
+	<% end %>
+	
 	<h4>Add an episode!</h4>
 	<div>	
 		<%= render 'episodes/new' %>
 	</div>
+	<br />
+	<br />
+	<%= button_to "Delete Show", {controller: :shows, action: :destroy}, {method: :delete} %>
 </div>

@@ -32,7 +32,6 @@ class ShowsController < ApplicationController
   def edit
   	@show = Show.find(params[:id])
   	@episode = Episode.new
-
   end
 
   def update
@@ -45,6 +44,20 @@ class ShowsController < ApplicationController
   	end
 
   	redirect_to show_path
+  end
+
+  def add_contributor
+    @show = Show.find(params[:id])
+    @contributor = Contributor.find(params[:id])
+
+    if @contributor
+      @contributor.shows << @show
+      flash[:notice] = "You were added to #{@show.id}, looking good!"
+      redirect_to show_path
+    else
+      flash[:alert]  = "Something went wrong; try again."
+      render 'edit'
+    end
   end
 
   def destroy

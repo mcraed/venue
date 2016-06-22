@@ -3,7 +3,7 @@ module SessionsHelper
 	def login_user(user)
 		session[:user_id] = user.id
 		name = user.fname[0].capitalize + user.fname[1..-1]
-		flash[:notice] = "Welcome to Venue, #{name}!"
+		flash[:notice] = "Glad you could make it, #{name}!"
 	end
 
   def current_user
@@ -13,7 +13,7 @@ module SessionsHelper
 	def contributor_login(cont)
 		session[:contributor_id] = cont.id
 		name = cont.fname[0].capitalize + cont.fname[1..-1]
-		flash[:notice] = "Welcome back, #{name}!"
+		flash[:notice] = "Glad you could make it, #{name}!"
 	end
 
 	def current_contributor

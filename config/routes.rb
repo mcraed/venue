@@ -2,6 +2,7 @@ Rails.application.routes.draw do
 
   resources :contributors do
     resources :shows
+    resources :episodes
   end
 
   resources :shows do
@@ -20,7 +21,7 @@ Rails.application.routes.draw do
   # contributor sessions
   get 'signin' => 'sessions#contributor_new'
   post 'signin' => 'sessions#contributor_create'
-  
+  # logging out
   delete 'logout' => 'sessions#destroy'
 
   root 'shows#index'

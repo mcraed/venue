@@ -1,7 +1,7 @@
 <% @contributors.each do |c| %>
 
 	<div>
-		<% if c.aka %>
+		<% if c.aka != ""%>
 			<a href=<%= contributor_path(c.id) %> ><%= c.aka %></a>
 		<% else %>
 			<a href=<%= contributor_path(c.id) %> ><%= fullname(c) %></a>

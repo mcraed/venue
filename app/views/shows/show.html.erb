@@ -23,14 +23,14 @@
 		<% end %>
 	</div>
 	<div>
-		<h3>Contributors</h3>
+		<h3>Lead Contributor</h3>
 		<% @show.contributors.each do |c| %>
 			<div>
 				<a href=<%= contributor_path(c.id) %> >
-					<% if c.aka %>
-						<%= c.aka %>
+					<% if c.aka != "" %>
+						<h3><%= c.aka %></h3>
 					<% else %>
-						<%= c.fullname(c) %>
+						<h3><%= fullname(c) %></h3>
 					<% end %>
 				</a>
 				<br />

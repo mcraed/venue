@@ -3,7 +3,18 @@
 <h5><%= @episode.show.name %></h5>
 <%= @episode.description %>
 <br />
+<br />
+<%= link_to "Back to #{Show.find(@episode.show_id).name}", show_path(@episode.show_id) %>
+<br />
+<br />
+<%= link_to "Edit", edit_episode_path(@episode.id) %>
+<br />
 <%= video_tag @episode.video.url, controls: true %>
+<br />
+<!-- <div>
+	Area to index contributos in show
+	<h4>Contributors</h4>
+</ div> -->
 
 <!-- users can browse other episodes on click without leaving current episode -->
 
@@ -11,7 +22,7 @@
 	<h4>All Episodes</h4>
 	<% @show.episodes.each do |e| %>
 		<div>
-			<!-- episode thumbnail goes here -->
+			<!-- episode thumbnail goes here, find out how to get it -->
 			<h3><%= e.title %></h3>
 			<br />
 			<br />
@@ -22,23 +33,4 @@
 	<% end %>
 </div>
 
-<div>
-	<h4>Contributors</h4>
-	<% @episode.contributors.each do |c| %>
-		<div>
-			<a href=<%= contributor_path(c.id) %> >
-				<% if c.aka %>
-					<%= c.aka %>
-				<% else %>
-					<%= c.fullname(c) %>
-				<% end %>
-			</a>
-			<br />
-			<a href=<%= contributor_path(c.id) %> >
-				<%= image_tag c.avatar.url(:thumb) %>
-			</a>
-		</div>
-		<br />
-	<% end %>
-</div>
 

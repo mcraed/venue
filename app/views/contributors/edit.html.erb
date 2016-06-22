@@ -1,5 +1,5 @@
-<div class="update-form">
-	<%= form_for @contributor, url: contributor_path do |f| %>
+
+	<%= form_for @contributor,  :url => { :action => "update" } do |f| %>
 		<h3>Edit Contributor</h3>
 		<div >
 			<%= f.label "First Name" %>
@@ -37,16 +37,27 @@
 			<%= f.text_area :bio %>
 		</div>
 
+		<div>
+		<%= f.label :password %>
+		<%= f.password_field :password %>
+		</div>
+
+		<div>
+			<%= f.label :password_confrimation %>
+			<%= f.password_field :password_confrimation %>
+		</div>
+
 		<div id="actions">
 			<%= f.submit %>
 		</div>
 
 	<% end %>
-</div>
 <br />
 <br />
 <br />
 <div>
 	<%= button_to "Delete Account", {controller: :contributors, action: :destroy}, {method: :delete} %>
 </div>
+<br />
+<br />
 
