@@ -40,7 +40,7 @@
 
  .app-container{
  		background: url('empty-studio1.jpg');
- 		background-size: center;
+ 		background-size: cover;
  		background-repeat: no-repeat;
  		background-attachment: fixed;
  }
