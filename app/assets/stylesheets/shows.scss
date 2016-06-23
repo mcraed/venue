@@ -69,15 +69,17 @@ a, a:visited{
 .show-instance{
 	width: 40vw;
 	margin: 2em 1.5em 0 0;
-	display: block;
+	display: inline-block;
 }
 
 .show-instance-img{
 	margin: 0 1em 0 0;
+	float: left;
 }
 
 .show-instance-name{
 	margin: .7em;
+	font-size: 1.6em;
 }
 
 .latest-episode-container{

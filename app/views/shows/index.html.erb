@@ -50,9 +50,11 @@
 					<div class="show-instance-desc">
 						<%= truncate("#{s.desc}",  length: 70) %>
 					</div>
+					<br clear="all" />
 				</div>
 			<% end %>	
 		</div>
+
 		<div class="latest-episode-container">	
 			<div class="latest-episode">
 				<h2><%= Episode.last.title %></h2>
