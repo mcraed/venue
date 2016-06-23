@@ -1,19 +1,21 @@
-<%= form_for @episode do |f| %>
+<% if current_contributor %>
+	<%= form_for @episode do |f| %>
 
-	<div>
-		<%= f.label :title %>
-		<%= f.text_field :title, value: @episode.title %>
-	</div>
-	<div>
-		<%= f.label :description %>
-		<%= f.text_field :description, value: @episode.description %>
-	</div>
-	<div>
-		<%= f.submit %>
-	</div>
-	<br />
-	<br />
-	<div>
-		<%= button_to "Delete Episode", {controller: :episodes, action: :destroy}, {method: :delete} %>
-	</div>
+		<div>
+			<%= f.label :title %>
+			<%= f.text_field :title, value: @episode.title %>
+		</div>
+		<div>
+			<%= f.label :description %>
+			<%= f.text_field :description, value: @episode.description %>
+		</div>
+		<div>
+			<%= f.submit %>
+		</div>
+		<br />
+		<br />
+		<div>
+			<%= button_to "Delete Episode", {controller: :episodes, action: :destroy}, {method: :delete} %>
+		</div>
+	<% end %>
 <% end %>

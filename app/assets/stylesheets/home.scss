@@ -1,3 +1,94 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+#landing-container{
+	width: 100vw;
+	height: 100vh;
+	background: url('prod-set-bg.jpg') no-repeat center center fixed;
+	z-index: 10;
+
+}
+
+a, a:visited{
+	text-decoration: none;
+}
+
+.nav ul{
+	list-style: none;
+}
+
+.home-logo{
+	width: 5em;
+	height: 5em;
+	background: url('icon-1.png');
+	background-size: cover;
+	display: inline-block;
+	margin: 1em 0 0 5em;
+}
+
+.home-nav-links{
+	margin: 0 0 0 7em;
+	color: #000;
+	font-size: 1.6em;
+}
+
+.nav li {
+	color: white;
+	text-decoration: none;
+	display: inline-block;
+}
+
+#brand{
+	width: 22em;
+	margin: 3em 0 1em 12em;
+	display: inline-block;
+}
+
+#brand-name{
+	font-size: 8em;
+	display: inline;
+}
+
+.home-sign-in-form{
+	width: 21em;
+	height: 45vh;
+	margin: .2em 0 0 11.5em;
+	padding: .4em 0 0 3em;
+	background: rgba(249, 249, 249, .7);
+}
+
+.home-sign-in-form h3{
+	margin-left: .6em;
+}
+
+.hsi-field{
+	width: 5em;
+	margin: 1em 0 1em 5em;
+}
+
+.hsi-label{
+	font-size: 2.2em;
+
+}
+
+.hsi-input{
+
+}
+
+.hsi-actions{
+	width: 2em;
+	margin: 1em 0 0 5em;
+}
+
+.hsi-button{
+
+}
+
+#home-sign-up-prompt{
+	width: 90%;
+	margin: 1em 0 0 0;
+	font-size: 1.3em;
+	text-align: center;
+}
+

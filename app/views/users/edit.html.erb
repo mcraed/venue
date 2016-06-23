@@ -1,55 +1,57 @@
-<div>
-<!-- if functionality is in place, USBA2 manage favorited contributors shows and episodes -->
-	<%= form_for @user do |f| %>
-		<h2>Edit Profile</h2>
-		<div>
-		<!-- take out all of these break tags when structuring -->
-			<%= image_tag	 @user.avatar.url(:medium) %>
-			<br />
-			<br />
-			<br />
-			<b><%= f.label "Change Avatar" %></b>
-			<%= f.file_field :avatar%>
-			<br />
-			<br />
-		</div>
-
-		<div>
-			<%= f.label "First Name" %>
-			<%= f.text_field :fname %>
-		</div>
-
-		<div>
-			<%= f.label "Last Name" %>
-			<%= f.text_field :lname %>
-		</div>
-		<br />
-		<div>
-			<%= f.label :username %>
-			<%= f.text_field :username %>
+<% if current_contributor %>
+	<div>
+	<!-- if functionality is in place, USBA2 manage favorited contributors shows and episodes -->
+		<%= form_for @user do |f| %>
+			<h2>Edit Profile</h2>
 			<div>
-				<i>Will be used to log in to Venue</i>				
+			<!-- take out all of these break tags when structuring -->
+				<%= image_tag	 @user.avatar.url(:medium) %>
+				<br />
+				<br />
+				<br />
+				<b><%= f.label "Change Avatar" %></b>
+				<%= f.file_field :avatar%>
+				<br />
+				<br />
 			</div>
-		</div>
-		<br />
-		<div>
-			<%= f.label :email %>
-			<%= f.email_field :email %>
-		</div>	
+
+			<div>
+				<%= f.label "First Name" %>
+				<%= f.text_field :fname %>
+			</div>
+
+			<div>
+				<%= f.label "Last Name" %>
+				<%= f.text_field :lname %>
+			</div>
+			<br />
+			<div>
+				<%= f.label :username %>
+				<%= f.text_field :username %>
+				<div>
+					<i>Will be used to log in to Venue</i>				
+				</div>
+			</div>
+			<br />
+			<div>
+				<%= f.label :email %>
+				<%= f.email_field :email %>
+			</div>	
 
 
-		<!-- user twitter and bio intentionally left out for now -->
-		<br />
-		<br />
-		<div>
-			<%= f.submit %>
-		</div>
+			<!-- user twitter and bio intentionally left out for now -->
+			<br />
+			<br />
+			<div>
+				<%= f.submit %>
+			</div>
 
-	<% end %>
-</div>
-<br />
-<br />
-<!-- button that leads to modal to delete account -->
-<div>
-	<%= button_to "Delete Account", {controller: :users, action: :destroy}, {method: :delete} %>
-</div>
+		<% end %>
+	</div>
+	<br />
+	<br />
+	<!-- button that leads to modal to delete account -->
+	<div>
+		<%= button_to "Delete Account", {controller: :users, action: :destroy}, {method: :delete} %>
+	</div>
+<% end %>

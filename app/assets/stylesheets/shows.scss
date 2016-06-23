@@ -1,3 +1,131 @@
 // Place all the styles related to the shows controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+header{
+	width: 100vw;
+	height: 15vh;
+	margin-bottom: 1em;
+	background: rgba(157, 164, 166, .6);
+}
+
+.show-wide-container{
+	width: 100vw;
+	height: 100vh;
+}
+
+.show-container{
+	width: 98vw;
+	margin: 0 auto;
+}
+
+.logo{
+	width: 5em;
+	height: 5em;
+	background: url('icon-1.png');
+	background-size: cover;
+	display: inline-block;
+	margin: 1vh 0 0 5em;
+}
+
+a, a:visited{
+	text-decoration: none;
+	color: #000;
+}
+
+.nav ul{
+ list-style: none;
+}
+
+.nav li {
+ color: white;
+ text-decoration: none;
+ display: inline-block;
+}
+
+.nav-links{
+	margin: 0 0 0 11em;
+	color: #000;
+	font-size: 1.6em;
+}
+
+.sign-up-prompt{
+	width: 25vw;
+	font-size: 1.2em;
+	text-align: center;
+}
+
+.logged-info{
+	width: 30vw;
+	height: 8vh;
+}
+
+.show-index-container{
+	width: 45vw;
+	margin: 2em 0 0 1em;
+	display: inline-block;
+	float: left;
+}
+
+.show-instance{
+	width: 40vw;
+	margin: 2em 1.5em 0 0;
+	display: block;
+}
+
+.show-instance-img{
+	margin: 0 1em 0 0;
+}
+
+.show-instance-name{
+	margin: .7em;
+}
+
+.latest-episode-container{
+	width: 45vw;
+	margin: 2em 0 1em 3em;
+	background: #000;
+	display: inline-block;
+	color: #fff;
+}
+
+.latest-episode{
+	width: 500px;
+	margin: 1em auto;
+}
+
+.latest-episode-video{
+	margin-top: .5em;
+}
+
+.show-show-info{
+	width: 30vw;
+	margin: 1em 0 0 2.5em;
+}
+
+.show-latest-episode-container{
+	width: 55vw;
+	margin: 2em 0 1em 3em;
+	background: #000;
+	display: inline-block;
+	color: #fff;
+	padding-left: .4em;
+}
+
+.show-latest-episode-title a{
+	color: #fff;
+}
+
+.show-latest-episode{
+	width: 650px;
+	margin: 1.5em auto;  
+}
+
+.show-show-episode-index{
+	width: 40vw;
+}
+
+
+
+
+
+

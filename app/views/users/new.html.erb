@@ -1,4 +1,4 @@
-<div>
+<div class="app-sign-up-form">
 	<%= form_for @user do |f| %>
 		<h4>Welcome! Tell us a little about yourself to get started!</h4>
 		<div>
@@ -35,10 +35,7 @@
 			<%= f.label "Profile Picture" %>
 			<%= f.file_field :avatar %>
 		</div>
-
 		<!-- users twitter and bio intentionally left out for now -->
-
-
 		<div>
 			<%= f.submit %>
 		</div>

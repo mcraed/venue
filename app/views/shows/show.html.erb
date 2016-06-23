@@ -1,44 +1,55 @@
-<div>
-	<h2><%= @show.name %></h2>
-	<%= image_tag @show.image.url(:medium) %>
-	<br />
-	<br />
-	<%= @show.desc %>
-	<br />
-	<% if @show.contributors.include? current_contributor %>
-		<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
-	<% end %>
-	<div>
-		<h3>Episodes</h3>
-		<% @show.episodes.each do |e| %>
-			<div>
+<div class="show-wide-container">
+	<header>
+		<div class='nav'>
+			<ul>
+			<div class="logo"></div>
+				<!-- add splash page, then root path will be shows index -->
+				<li><%= link_to "Shows", shows_path, class: "nav-links" %></li>
+				<li><%= link_to "Contributors", contributors_path, class: "nav-links" %></li>
+			</ul>
+			<% if current_user || current_contributor %>
+				<%= link_to "Log Out", logout_path, method: :delete %> 
+			<% end %>
+		</div>
+	</header>
+	<div class="show-container">
+		<div class="logged-info">
+			<% if current_user %>
 				<div>
-				<a href=<%= episode_path(e.id) %> >
-					<h3><%= e.title %></h3>
-				</a>
+					<h4>Logged in as <%= current_user.username %></h4>
 				</div>
-				<!-- index episode by thumbnail, not actual video (find out how) -->
-				<%= video_tag e.video.url, controls: true	 %>
-			</div>
-		<% end %>
-	</div>
-	<div>
-		<h3>Lead Contributor</h3>
-		<% @show.contributors.each do |c| %>
-			<div>
-				<a href=<%= contributor_path(c.id) %> >
-					<% if c.aka != "" %>
-						<h3><%= c.aka %></h3>
-					<% else %>
-						<h3><%= fullname(c) %></h3>
-					<% end %>
-				</a>
-				<br />
-				<a href=<%= contributor_path(c.id) %> >
-					<%= image_tag c.avatar.url(:thumb) %>
-				</a>
-			</div>
+				<li><%= link_to "Home", user_path(current_user.id), class: "nav-links" %></li>
+			<% elsif current_contributor %>
+				<div>
+					<h4>Logged in as <%= fullname(current_contributor) %></h4>
+				</div>
+				<li><%= link_to "Home", contributor_path(current_contributor.id) %></li>
+			<% else %>
+				<div class="sign-up-prompt">
+					<h4><%= link_to "Log in/Sign up", root_path %> For Exclusive Contests, Events, Promotions, and More!</h4>
+				</div>	
+			<% end %>	
+		</div>
+		<div class="show-show-info">
+			<h2><%= @show.name %></h2>
+			<%= image_tag @show.image.url(:medium) %>
 			<br />
-		<% end %>
+			<br />
+			<%= @show.desc %>
+			<br />
+			<% if @show.contributors.include? current_contributor %>
+				<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
+			<% end %>
+		</div>
+		<div class="show-latest-episode-container">
+			<h3>Latest Episode</h3>
+			<div class='show-latest-episode-title'>
+				<%= link_to "#{@show.episodes.last.title}",episode_path(@show.episodes.last.id) %> 
+			</div>
+			<div class="show-latest-episode">
+				<%= video_tag @show.episodes.last.video.url, controls: true %>
+			</div>
+		</div>
+		<br clear="all" />
 	</div>
 </div>

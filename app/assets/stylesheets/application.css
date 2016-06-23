@@ -13,3 +13,31 @@
  *= require_tree .
  *= require_self
  */
+
+ *	{
+ 	margin: 0;
+ 	padding: 0;
+ }
+
+ header	{
+ 	width: 100vw;
+ }
+
+ header {
+ 	list-style: none;
+ }
+
+ header li {
+ 	color: white;
+ 	text-decoration: none;
+ 	display: inline-block;
+ }
+
+ a {
+ 	text-decoration: #fff;
+
+ }
+
+ .app-container{
+ 		background: url('empty-studio1.jpg') no-repeat center center fixed;
+ }
