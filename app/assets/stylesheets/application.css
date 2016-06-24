@@ -19,28 +19,62 @@
  	padding: 0;
  }
 
- header	{
- 	width: 100vw;
+ html{
+ 	background: url('empty-studio1.jpg') no-repeat center center fixed;
  }
 
- header {
+header{
+	width: 100vw;
+	height: 15vh;
+	margin-bottom: 1em;
+	background: rgba(157, 164, 166, .6);
+}
+
+ header ul{
  	list-style: none;
  }
 
  header li {
- 	color: white;
  	text-decoration: none;
  	display: inline-block;
  }
 
- a {
- 	text-decoration: #fff;
+.logo{
+	width: 5em;
+	height: 5em;
+	background: url('icon-1.png');
+	background-size: cover;
+	display: inline-block;
+	margin: 1vh 0 0 5em;
+}
 
- }
+a, a:visited{
+	text-decoration: none;
+	color: #000;
+}
 
- .app-container{
- 		background: url('empty-studio1.jpg');
- 		background-size: cover;
- 		background-repeat: no-repeat;
- 		background-attachment: fixed;
- }
+.nav ul{
+ list-style: none;
+}
+
+.nav li {
+ color: white;
+ text-decoration: none;
+ display: inline-block;
+}
+
+.nav-links{
+	margin: 0 0 0 11em;
+	color: #000;
+	font-size: 1.6em;
+}
+
+.sign-up-prompt{
+	width: 98vw;
+	font-size: 1.2em;
+}
+
+.logged-info{
+	width: 30vw;
+	height: 8vh;
+}

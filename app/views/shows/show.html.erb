@@ -42,12 +42,12 @@
 			<% end %>
 		</div>
 		<div class="show-latest-episode-container">
-			<h3>Latest Episode</h3>
+			<h2>Latest Episode</h2>
 			<div class='show-latest-episode-title'>
 				<%= link_to "#{@show.episodes.last.title}",episode_path(@show.episodes.last.id) %> 
 			</div>
 			<div class="show-latest-episode">
-				<%= video_tag @show.episodes.last.video.url, controls: true %>
+				<%= video_tag @show.episodes.last.video.url, width: '600', height: '300', controls: true %>
 			</div>
 		</div>
 		<br clear="all" />

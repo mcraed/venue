@@ -1,12 +1,7 @@
 // Place all the styles related to the shows controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-header{
-	width: 100vw;
-	height: 15vh;
-	margin-bottom: 1em;
-	background: rgba(157, 164, 166, .6);
-}
+
 
 .show-wide-container{
 	width: 100vw;
@@ -18,52 +13,19 @@ header{
 	margin: 0 auto;
 }
 
-.logo{
-	width: 5em;
-	height: 5em;
-	background: url('icon-1.png');
-	background-size: cover;
-	display: inline-block;
-	margin: 1vh 0 0 5em;
-}
-
-a, a:visited{
-	text-decoration: none;
-	color: #000;
-}
-
-.nav ul{
- list-style: none;
-}
-
-.nav li {
- color: white;
- text-decoration: none;
- display: inline-block;
-}
-
-.nav-links{
-	margin: 0 0 0 11em;
-	color: #000;
-	font-size: 1.6em;
-}
-
-.sign-up-prompt{
-	width: 25vw;
-	font-size: 1.2em;
-	text-align: center;
-}
-
-.logged-info{
-	width: 30vw;
-	height: 8vh;
-}
-
 .show-index-container{
 	width: 45vw;
 	margin: 2em 0 0 1em;
 	display: inline-block;
 	float: left;
+}
+
+.show-index-overflow{
+	width: 98%;
+	height: 90vh;
+	margin-bottom: 1em;
+	overflow: scroll;
+	background: rgba(213, 212, 207, .4);
 }
 
 .show-instance{
@@ -73,7 +35,7 @@ a, a:visited{
 }
 
 .show-instance-img{
-	margin: 0 1em 0 0;
+	margin: 0 1.5em 0 1em;
 	float: left;
 }
 
@@ -84,7 +46,7 @@ a, a:visited{
 
 .latest-episode-container{
 	width: 45vw;
-	margin: 2em 0 1em 3em;
+	margin: 3.5em 0 1em 3em;
 	background: #000;
 	display: inline-block;
 	color: #fff;
@@ -101,31 +63,31 @@ a, a:visited{
 
 .show-show-info{
 	width: 30vw;
-	margin: 1em 0 0 2.5em;
+	margin: 1.6em 0 0 2.5em;
+	float: left;
 }
 
 .show-latest-episode-container{
 	width: 55vw;
-	margin: 2em 0 1em 3em;
-	background: #000;
+	height: 70vh;
+	margin: -.4em 0 0 3em;
 	display: inline-block;
 	color: #fff;
 	padding-left: .4em;
 }
 
 .show-latest-episode-title a{
+	margin-left: 1.5em;
 	color: #fff;
+	font-size: 1.3em;
 }
 
 .show-latest-episode{
-	width: 650px;
-	margin: 1.5em auto;  
+	width: 90%;
+	margin: 1vh auto;  
+	background: #000;
+	text-align: center;
 }
-
-.show-show-episode-index{
-	width: 40vw;
-}
-
 
 
 

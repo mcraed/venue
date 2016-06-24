@@ -1,32 +1,38 @@
 <header>
-	<div class='nav'>
-		<ul>
-			<!-- add splash page, then root path will be shows index -->
-			<li><h2><%= link_to "Venue", root_path %></h2></li> 
+		<div class='nav'>
+			<ul>
+			<div class="logo"></div>
+				<!-- add splash page, then root path will be shows index -->
+				<li><%= link_to "Shows", shows_path, class: "nav-links" %></li>
+				<li><%= link_to "Contributors", contributors_path, class: "nav-links" %></li>
+			</ul>
+			<% if current_user || current_contributor %>
+				<%= link_to "Log Out", logout_path, method: :delete %> 
+			<% end %>
+		</div>
+	</header>
+	<div class="show-container">
+		<div class="logged-info">
 			<% if current_user %>
 				<div>
 					<h4>Logged in as <%= current_user.username %></h4>
 				</div>
-				<li><%= link_to "Home", user_path(current_user.id) %></li>
+
+				<li><%= link_to "Home", user_path(current_user.id), class: "nav-links" %></li>
+
 			<% elsif current_contributor %>
 				<div>
 					<h4>Logged in as <%= fullname(current_contributor) %></h4>
 				</div>
+
 				<li><%= link_to "Home", contributor_path(current_contributor.id) %></li>
+
+			<% else %>
+				<div class="sign-up-prompt">
+					<h4><%= link_to "Log in/Sign up", root_path %> For Exclusive Contests, Events, Promotions, and More!</h4>
+				</div>	
 			<% end %>	
-			<li><%= link_to "Shows", shows_path %></li>
-			<li><%= link_to "Contributors", contributors_path %></li>
-		</ul>
-		<% if current_user || current_contributor %>
-			<%= link_to "Log Out", logout_path, method: :delete %> 
-		<% end %>
-	</div>
-</header>
-<div class="sign-up-prompt">
-	<% if !current_user || !current_contributor %>
-		<h4><%= link_to "Sign Up", new_user_path %> For Exclusive Contests, Events, and Promotions!</h4>
-	<% end %>
-</div>	
+		</div>
 <% @contributors.each do |c| %>
 	<div>
 		<% if c.aka != ""%>

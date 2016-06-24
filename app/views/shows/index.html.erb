@@ -36,23 +36,25 @@
 		</div>
 		<div class="show-index-container">
 			<h3>All Shows</h3>
-			<% @shows.each do |s| %>
-				<!-- mouse over for s.description? -->
-				<div class="show-instance">	
-					<div class="show-instance-img">
-						<a href=<%= show_path(s.id) %> ><%= image_tag s.image.url, width: '200', height: '200' %></a>
-					</div>
+			<div class="show-index-overflow">
+				<% @shows.each do |s| %>
+					<!-- mouse over for s.description? -->
+					<div class="show-instance">	
+						<div class="show-instance-img">
+							<a href=<%= show_path(s.id) %> ><%= image_tag s.image.url, width: '200', height: '200' %></a>
+						</div>
 
-					<div class="show-instance-name">
-						<a href=<%= show_path(s.id) %> ><%= s.name %>
-						</a>
+						<div class="show-instance-name">
+							<a href=<%= show_path(s.id) %> ><%= s.name %>
+							</a>
+						</div>
+						<div class="show-instance-desc">
+							<%= truncate("#{s.desc}",  length: 70) %>
+						</div>
+						<br clear="all" />
 					</div>
-					<div class="show-instance-desc">
-						<%= truncate("#{s.desc}",  length: 70) %>
-					</div>
-					<br clear="all" />
-				</div>
-			<% end %>	
+				<% end %>	
+			</div>
 		</div>
 
 		<div class="latest-episode-container">	
