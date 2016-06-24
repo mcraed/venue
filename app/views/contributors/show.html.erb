@@ -51,10 +51,10 @@
 </div>
 <div>
 	<h4>Shows</h4>
-	<% @contributor.contributor_shows.each do |s| %>
+	<% @contributor.shows.each do |s| %>
 		<div>
-			<h4><%= link_to Show.find(s.show_id).name, show_path(s.show_id) %></h4>
-			<a href=<%= show_path(s.show_id) %> > <%= image_tag Show.find(s.show_id).image.url(:thumb) %> </a>
+			<h4><%= link_to Show.find(s.id).name, show_path(s.id) %></h4>
+			<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url(:thumb) %> </a>
 		</div>
 	<% end %>
 </div>

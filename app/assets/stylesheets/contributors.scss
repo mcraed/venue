@@ -1,3 +1,54 @@
 // Place all the styles related to the contributors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+.contributor-wide-container{
+	width: 100vw;
+	height: 100vh;
+}
+
+.contributor-container{
+	width: 98vw;
+	margin: 0 auto;
+}
+
+.contributor-index-container{
+	width: 98vw;
+	margin: 1em 0 0 1em;
+	display: inline-block;
+	float: left;
+}
+
+.contributor-index-overflow{
+	width: 45vw;
+	height: 98vh;
+	margin-bottom: 1em;
+	padding-top: 1em;
+	overflow: scroll;
+	background: rgba(213, 212, 207, .4);
+	float: left;
+	display: inline-block;
+}
+
+.contributor-instance{
+	width: 8em;
+	margin: 2px auto;
+}
+
+.contributor-image{
+	width: 3em;
+	// float: left;
+	// display: inline-block;
+}
+
+.contributor-info{
+
+}
+
+.random-episode-container{
+	width: 45vw;
+	margin: 0 0 0 3em;
+	padding-left: 1.5em;
+	display: inline-block;
+	background: #000;
+	color: #fff;
+}

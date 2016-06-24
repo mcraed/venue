@@ -29,6 +29,8 @@ class ContributorsController < ApplicationController
 
 	def index
 		@contributors = Contributor.all
+
+		@episode = Episode.all.sample
 	end
 
 	def edit
