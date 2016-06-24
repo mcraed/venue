@@ -2,8 +2,10 @@
 	<div class='nav'>
 		<ul>
 			<div class="home-logo"></div>
-			<li><%= link_to "Shows", shows_path, class: "home-nav-links" %></li>
-			<li><%= link_to "Contributors", contributors_path, class: "home-nav-links" %></li>
+			<div class="nav-link-container">
+				<li><%= link_to "Shows", shows_path, class: "home-nav-links" %></li>
+				<li><%= link_to "Contributors", contributors_path, class: "home-nav-links" %></li>
+			</div>
 		</ul>
 		<div class="home-logout">
 			<% if current_user || current_contributor %>

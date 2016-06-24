@@ -23,22 +23,6 @@
  	background: url('empty-studio1.jpg') no-repeat center center fixed;
  }
 
-header{
-	width: 100vw;
-	height: 15vh;
-	margin-bottom: 1em;
-	background: rgba(157, 164, 166, .6);
-}
-
- header ul{
- 	list-style: none;
- }
-
- header li {
- 	text-decoration: none;
- 	display: inline-block;
- }
-
 .logo{
 	width: 5em;
 	height: 5em;
@@ -48,25 +32,22 @@ header{
 	margin: 1vh 0 0 5em;
 }
 
-a, a:visited{
+a, a:visited {
 	text-decoration: none;
-	color: #000;
+	color: #fff;
 }
 
 .nav ul{
  list-style: none;
 }
 
-.nav li {
- color: white;
- text-decoration: none;
- display: inline-block;
+.nav li{
+	margin: 0 0 0 1em;
+	font-size: 1.6em;
 }
 
-.nav-links{
-	margin: 0 0 0 11em;
-	color: #000;
-	font-size: 1.6em;
+.nav-link-container{
+	display: inline-block;
 }
 
 .sign-up-prompt{

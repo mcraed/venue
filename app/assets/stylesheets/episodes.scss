@@ -2,8 +2,26 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
-.episode-container{
+.episode-wide-container{
 	width: 98vw;
+	margin: 0 auto;
+	color: #fff;
+}
+
+.episode-container{
+	width: 96vw;
+	margin: 0 auto;
+	background: #000;
+}
+
+.episode-video{
+	position: relative;
+	width: 950px;
 	margin: 0 auto;
 }
 
+.episode-info{
+	position: absolute;
+	bottom: 23em;
+	left: 3em;
+}

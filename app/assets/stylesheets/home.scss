@@ -1,4 +1,4 @@
-// Place all the styles related to the home controller here.
+	// Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 
@@ -24,19 +24,13 @@ a, a:visited{
 	background: url('icon-1.png');
 	background-size: cover;
 	display: inline-block;
-	margin: 1em 0 0 5em;
+	margin: 1vh 0 0 5em;
 }
 
-.home-nav-links{
-	margin: 0 0 0 7em;
+.nav li{
+	margin: 0 0 0 1em;
 	color: #000;
 	font-size: 1.6em;
-}
-
-.nav li {
-	color: white;
-	text-decoration: none;
-	display: inline-block;
 }
 
 #brand{

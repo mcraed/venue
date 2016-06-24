@@ -3,9 +3,10 @@
 		<div class='nav'>
 			<ul>
 			<div class="logo"></div>
-				<!-- add splash page, then root path will be shows index -->
-				<li><%= link_to "Shows", shows_path, class: "nav-links" %></li>
-				<li><%= link_to "Contributors", contributors_path, class: "nav-links" %></li>
+			<div class="nav-link-container">
+				<li><%= link_to "Shows", shows_path %></li>
+				<li><%= link_to "Contributors", contributors_path %></li>
+			</div>
 			</ul>
 			<% if current_user || current_contributor %>
 				<%= link_to "Log Out", logout_path, method: :delete %> 
