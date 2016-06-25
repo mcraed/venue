@@ -2,8 +2,9 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 .contributor-wide-container{
+	position: relative;
 	width: 100vw;
-	height: 100vh;
+
 }
 
 .contributor-container{
@@ -30,20 +31,18 @@
 }
 
 .contributor-instance{
-	width: 8em;
+	width: 32em;
 	margin: 2px auto;
 }
 
 .contributor-image{
-	width: 3em;
-	// float: left;
-	// display: inline-block;
+	float: left;
+	display: inline-block;
 }
 
 .contributor-info{
-
+	width: 5em;
 }
-
 .random-episode-container{
 	width: 45vw;
 	margin: 0 0 0 3em;

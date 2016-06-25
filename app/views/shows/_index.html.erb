@@ -1,0 +1,47 @@
+<div class="show-wide-container">
+	<header>
+		<div class='nav'>
+			<ul>
+			<div class="logo"></div>
+			<div class="nav-link-container">
+				<li><%= link_to "Shows", shows_path %></li>
+				<li><%= link_to "Contributors", contributors_path %></li>
+			</div>
+			</ul>
+			<% if current_user || current_contributor %>
+				<%= link_to "Log Out", logout_path, method: :delete %> 
+			<% end %>
+			<!-- <div class="header-title"> -->
+				<h2>Top Video on Venue</h2>
+			<!-- </div>  -->
+		</div>
+	</header>
+	<div class="homepage-video-container">	
+		<div class="homepage-video-info">
+			<% e = @episode %>
+			<h2><%= truncate("#{e.title}", length: 28) %></h2>
+			<h5><%= truncate("#{e.show.name}", length: 70) %></h5>
+		<div class="homepage-video-img-container">
+			<%= image_tag e.show.image, class: "homepage-video-show-img", width: '200', height: '200' %>
+		</div>
+		</div>
+		<div class="homepage-video">
+			<%= video_tag e.video.url, controls: true, width: '500', height: '250', class: 'homepage-episode' %>
+		</div>
+	</div>
+	<!-- was in div class show-container -->
+	<div class="show-index-container">
+		<h2>Shows</h2>
+		<div>
+			<% @shows.each do |s| %>
+				<div class="show-instance">	
+					<a href=<%= show_path(s.id) %> >
+						<%= image_tag s.image.url, width: '250', height: '250' %>
+					</a>
+				</div>
+			<% end %>
+		</div>	
+		<br clear="all" />
+	</div>
+	<!-- was in div class show-container -->
+</div>

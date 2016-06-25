@@ -5,60 +5,65 @@
 
 .show-wide-container{
 	width: 100vw;
-	height: 100vh;
 }
 
-.show-container{
-	width: 98vw;
-	margin: 0 auto;
-}
 
-.show-index-container{
-	width: 45vw;
-	margin: 2em 0 0 1em;
-	display: inline-block;
-	float: left;
-}
-
-.show-index-overflow{
-	width: 98%;
-	height: 90vh;
-	margin-bottom: 1em;
-	overflow: scroll;
-	background: rgba(213, 212, 207, .4);
-}
-
-.show-instance{
-	width: 40vw;
-	margin: 2em 1.5em 0 0;
-	display: inline-block;
-}
-
-.show-instance-img{
-	margin: 0 1.5em 0 1em;
-	float: left;
-}
-
-.show-instance-name{
-	margin: .7em;
-	font-size: 1.6em;
-}
-
-.latest-episode-container{
-	width: 45vw;
-	margin: 3.5em 0 1em 3em;
+.homepage-video-container{
+	width: 100vw;
+	height: 70vh;
 	background: #000;
-	display: inline-block;
 	color: #fff;
 }
 
-.latest-episode{
-	width: 500px;
-	margin: 1em auto;
+// give background color
+.homepage-video-info{
+	position: relative;
+	top: -9.5em;
+	left: 2em;
+	width: 19em;
+	height: 21em;
+	color: #fff;
+	display: inline-block;
 }
 
-.latest-episode-video{
-	margin-top: .5em;
+.homepage-video-info h5{
+	margin: 2vh 0 0 0;
+}
+
+.homepage-video-img-container{
+	margin: 2vh 0 0 1.3em;
+
+}
+
+.homepage-video{
+	width: 70vw;
+	height: 80;
+	display: inline-block;
+}
+
+.homepage-episode{
+	width: 65vw;
+	height: 70vh;
+	margin: 0 0 2em 1em;
+	display: inline-block;
+}
+
+.show-index-container{
+	width: 100vw;
+	text-align: center;
+	background: rgba(195, 46, 36, .6);
+	padding-top: 1em;
+}
+
+.show-index-container h2{
+	text-align: left;
+	margin: 0em 0 .3em 3em;
+	font-size: 2.5em;
+}
+
+.show-instance{
+	display: inline-block;
+	margin: .5vh 1em;
 }
 
 .show-show-info{

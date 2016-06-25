@@ -6,7 +6,7 @@ class Contributor < ActiveRecord::Base
 	has_secure_password
 
 	has_attached_file :avatar, styles: {
-		thumb: "230x230>",
+		thumb: "230x230#",
 		medium: "300x300>"
 	},
 

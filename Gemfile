@@ -1,4 +1,7 @@
 source 'https://rubygems.org'
+
+# jquery / jquery-ui
+  gem 'jquery-ui-rails'
 # debugging
   gem "pry"
 # Enabling secure sessions (password_digest)

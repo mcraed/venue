@@ -42,11 +42,10 @@
 			<div class="contributor-index-overflow">
 				<% @contributors.each do |c| %>
 					<div class="contributor-instance">
-						<div class="contributor-image">
-							<a href=<%= contributor_path(c.id) %> ><%= image_tag c.avatar.url(:thumb) %></a>
-						</div>
+						<a href=<%= contributor_path(c.id) %> ><%= image_tag c.avatar.url(:thumb), class: 'contributor-image' %></a>
+						
 						<div class="contributor-info">
-							<div class="contribtor-name">
+							<div class="contributor-name">
 								<% if c.aka != ""%>
 									<a href=<%= contributor_path(c.id) %> ><%= c.aka %></a>
 								<% else %>
@@ -54,9 +53,9 @@
 								<% end %> 
 							</div>
 							<% if c.shows %>
-								<div>
+								<div class='contributor-shows'>
 									<% c.shows.each do |s| %>
-									<%= link_to Show.find(s.id).name, show_path(s.id) %>
+										<%= link_to Show.find(s.id).name, show_path(s.id) %>
 									<% end %>
 								</div>
 							<% end %>

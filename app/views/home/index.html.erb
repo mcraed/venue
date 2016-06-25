@@ -1,3 +1,5 @@
+
+
 <div id='landing-container'>
 	<div class='nav'>
 		<ul>
@@ -28,25 +30,11 @@
 	<div id="brand">
 		<h3 id="brand-name">Venue</h3>
 	</div>
-	<div class="home-sign-in-form">
-		<%= form_for(:session, url: login_path) do |f| %>	
-			<h3>Sign In</h3>
-			<div class="hsi-field">
-				<%= f.label :username, class: "hsi-label" %>
-				<%= f.text_field :username, class: "hsi-input" %>
-			</div>
-			<div class="hsi-field">
-				<%= f.label :password, class: "hsi-label" %>
-				<%= f.password_field :password, class: "hsi-input" %>
-			</div>
-			<div class="hsi-actions">
-				<%= f.submit "Log In", controller: :sessions, action: :create, class: "hsi-button" %>
-			</div>
-			<div id="home-sign-up-prompt">
-				<% if !current_user || !current_contributor %>
-					<h4><%= link_to "Sign Up", new_user_path %> For Exclusive Contests, Events, Promotions, and more!</h4>
-				<% end %>
-			</div>
-		<% end %>
-	</div>
+</div>
+<div class="shows-index">
+	<%= render 'shows/index' %>	
+</div>
+<br clear="all" />
+<div class="contributors-index">
+	<%= render 'contributors/index'%>
 </div>
