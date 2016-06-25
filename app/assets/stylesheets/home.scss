@@ -44,45 +44,85 @@ a, a:visited{
 	display: inline;
 }
 
-.home-sign-in-form{
-	width: 21em;
-	height: 45vh;
-	margin: .2em 0 0 11.5em;
-	padding: .4em 0 0 3em;
-	background: rgba(249, 249, 249, .7);
+.homepage-video-container{
+	width: 100vw;
+	height: 70vh;
+	background: #000;
+	color: #fff;
 }
 
-.home-sign-in-form h3{
-	margin-left: .6em;
+ give background color
+.homepage-video-info{
+	position: relative;
+	top: -9.5em;
+	left: 2em;
+	width: 19em;
+	height: 21em;
+	color: #fff;
+	display: inline-block;
 }
 
-.hsi-field{
-	width: 5em;
-	margin: 1em 0 1em 5em;
+.homepage-video-info h5{
+	margin: 2vh 0 0 0;
 }
 
-.hsi-label{
-	font-size: 2.2em;
-
-}
-
-.hsi-input{
-
-}
-
-.hsi-actions{
-	width: 2em;
-	margin: 1em 0 0 5em;
-}
-
-.hsi-button{
+.homepage-video-img-container{
+	margin: 2vh 0 0 1.3em;
 
 }
 
-#home-sign-up-prompt{
-	width: 90%;
-	margin: 1em 0 0 0;
-	font-size: 1.3em;
-	text-align: center;
+.homepage-video{
+	width: 70vw;
+	height: 80;
+	display: inline-block;
 }
+
+.homepage-episode{
+	width: 65vw;
+	height: 70vh;
+	margin: 0 0 2em 1em;
+	display: inline-block;
+}
+
+// .home-sign-in-form{
+// 	width: 21em;
+// 	height: 45vh;
+// 	margin: .2em 0 0 11.5em;
+// 	padding: .4em 0 0 3em;
+// 	background: rgba(249, 249, 249, .7);
+// }
+
+// .home-sign-in-form h3{
+// 	margin-left: .6em;
+// }
+
+// .hsi-field{
+// 	width: 5em;
+// 	margin: 1em 0 1em 5em;
+// }
+
+// .hsi-label{
+// 	font-size: 2.2em;
+
+// }
+
+// .hsi-input{
+
+// }
+
+// .hsi-actions{
+// 	width: 2em;
+// 	margin: 1em 0 0 5em;
+// }
+
+// .hsi-button{
+
+// }
+
+// #home-sign-up-prompt{
+// 	width: 90%;
+// 	margin: 1em 0 0 0;
+// 	font-size: 1.3em;
+// 	text-align: center;
+// }
 
