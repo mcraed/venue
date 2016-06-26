@@ -33,6 +33,7 @@
 		<% else %>
 			<h2><%= fullname(@contributor) %></h2>
 		<% end %>
+		<br />
 		<%= image_tag @contributor.avatar(:medium) %>	
 		<% if @contributor.since %>
 			<h3>Contributor Since <%= @contributor.since %></h3>
@@ -53,7 +54,7 @@
 			<% @contributor.shows.each do |s| %>
 				<div>
 					<h4><%= link_to Show.find(s.id).name, show_path(s.id) %></h4>
-					<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url(:thumb) %> </a>
+					<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url, width: '150', height: '150' %> </a>
 				</div>
 			<% end %>
 		</div>
@@ -71,5 +72,6 @@
 	<div class="twitter-container">
 		<a class="twitter-timeline" data-width="500" data-dnt="true" data-theme="dark" href=<%= "https://twitter.com/#{@contributor.twitter}" %> >Tweets by<% if @contributor.aka %> <%= @contributor.aka %><% else %> <%= fullname(@contributor) %><% end %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
 	</div>
+	<br clear="all" />
 </div>	
 

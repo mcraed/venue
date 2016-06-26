@@ -10,7 +10,7 @@
 
 .cont-show-info{
 	width: 35vw;
-	margin: 0 0 0 6.5em;
+	margin: 0 3em 0 6.5em;
 	display: inline-block;
 	float: left;
 }
@@ -21,17 +21,25 @@
 }
 
 .cont-show-epi-rand{
-	width: 41vw;
+	width: 40vw;
 	display: inline-block;
 	background: #000;
-	padding-left: 1em;
+	padding: 1em 1em;
 	color: #fff;
+	margin-bottom: 5em;
 }
 
 .cont-show-video{
 	width: 40vw;
 	height: 55vh;
 	margin: 0 auto;
+}
+
+.twitter-container{
+	width: 500px;
+	height: 600px;
+	overflow: scroll;
+	margin-bottom: 2em
 }
 
 
