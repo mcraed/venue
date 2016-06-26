@@ -1,5 +1,3 @@
-
-
 <div id='landing-container'>
 	<div class='nav'>
 		<ul>
@@ -34,6 +32,28 @@
 <div class="shows-index">
 	<%= render 'shows/index' %>	
 </div>
-<div class="contributors-index">
-	<%= render 'contributors/index'%>
+<div class="homepage-video-container">
+	<div class="homepage-video">
+		<%= video_tag @ran_epi.video.url, width: '500', height: '250', controls: true, class: 'homepage-episode' %>
+	</div>
+	<div class="homepage-video2-info">
+			<h2><%= truncate("#{@ran_epi.title}", length: 30) %></h2>
+			<h3><%= truncate("#{@ran_epi.show.name}", length: 35) %></h3>
+			<%= image_tag @ran_epi.show.image.url, width: '200', height: '200', class: 'homepage-video2-info-img' %>
+	</div>
+	<div class="contributor-index-container">
+		<div class="contributor-index-label">
+		</div>
+		<% @contributors.each do |c| %>
+			<div class="contributor-instance">
+				<a href=<%= contributor_path(c.id) %> >
+					<%= image_tag c.avatar.url, width: '130', height: '130' %>
+				</a>
+			</div>
+		<% end %>
+	</div>
+	<br clear='all' />
+	<footer>
+		<h4>Venue 2016</h4>
+	</footer>
 </div>

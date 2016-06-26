@@ -38,12 +38,16 @@ a, a:visited {
 	color: #fff;
 }
 
+a:hover{
+	width: 27px; 
+}
 .nav ul{
  list-style: none;
+	padding-bottom: .5em;
 }
 
 .nav li{
-	margin: 0 0 0 1em;
+	margin: 0 0 0em 1em;
 	font-size: 1.6em;
 }
 

@@ -1,45 +1,61 @@
 // Place all the styles related to the contributors controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
-.contributor-wide-container{
+
+.contributor-show-container{
+	width: 100vw;
 	position: relative;
-	width: 100vw;
+	top: 15vh;
 }
 
-.contributor-container{
-	width: 100vw;
+.cont-show-info{
+	width: 35vw;
+	margin: 0 0 0 6.5em;
+	display: inline-block;
+	float: left;
 }
 
-.homepage-random-episode{
-	width: 100vw;
-	background: #000;
+.cont-show-bio{
+	width: 98vw;
+	margin: 3em auto;
 }
-.random-episode-container{
-	width: 45vw;
-	margin: 0 0 0 3em;
-	padding-left: 1.5em;
+
+.cont-show-epi-rand{
+	width: 41vw;
 	display: inline-block;
 	background: #000;
+	padding-left: 1em;
 	color: #fff;
 }
 
-.contributor-index-container{
-	width: 100vw;
-	text-align: center;
-	padding-top: 1em;
+.cont-show-video{
+	width: 40vw;
+	height: 55vh;
+	margin: 0 auto;
 }
 
-.contributor-index-container h2{
-	text-align: left;
-	margin: 0em 0 .3em 3em;
-	font-size: 2.5em;
-}
 
-.contributor-instance{
-	width: 3em;
-	margin: .5vh 1em;
-}
 
-.contributor-info{
-	width: 5em;
-}
+// .homepage-random-episode{
+// 	width: 100vw;
+// 	background: #000;
+// }
+
+// .random-episode-container{
+// 	width: 45vw;
+// 	margin: 0 0 0 3em;
+// 	padding-left: 1.5em;
+// 	display: inline-block;
+// 	background: #000;
+// 	color: #fff;
+// }
+
+
+// .contributor-index-container h2{
+// 	margin: 0em 0 .3em 3em;
+// 	font-size: 2.5em;
+// }
+
+// .contributor-info{
+// 	width: 5em;
+// }

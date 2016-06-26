@@ -25,6 +25,7 @@ class ContributorsController < ApplicationController
 	def show
 		@contributor = Contributor.find(params[:id])
 		@show = Show.new
+		@episode = Episode.all.sample
 	end
 
 	def index

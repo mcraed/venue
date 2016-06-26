@@ -10,7 +10,6 @@
 
 .homepage-video-container{
 	width: 100vw;
-	height: 70vh;
 	background: #000;
 	color: #fff;
 }
@@ -32,12 +31,18 @@
 
 .homepage-video-img-container{
 	margin: 2vh 0 0 1.3em;
-
 }
 
 .homepage-video{
 	width: 70vw;
-	height: 80;
+	display: inline-block;
+	position: relative;
+	left: 3.5em;
+}
+
+.homepage-video2{
+	width: 70vw;
+	height: 80vh;
 	display: inline-block;
 }
 
@@ -51,14 +56,13 @@
 .show-index-container{
 	width: 100vw;
 	text-align: center;
-	background: rgba(171, 19, 29, .9);
 	padding-top: 1em;
 }
 
-.show-index-container h2{
-	text-align: left;
-	margin: 0em 0 .3em 3em;
-	font-size: 2.5em;
+.show-index-container h3{
+	text-align: right;
+	margin: 0em 6em .5em 0;
+	font-size: 2em;
 }
 
 .show-instance{
