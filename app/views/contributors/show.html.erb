@@ -48,9 +48,11 @@
 		<% end %>
 	</div>
 	<div class="cont-show-epi-rand">
+	<% if @episode %>
 		<h3><%= truncate("#{@episode.title}", length: 70 ) %></h3>
 		<h4><%= truncate("#{@episode.show.name}", length: 70) %></h4>
 		<%= video_tag @episode.video.url, controls: true, width: '440', height: '440', class: 'cont-show-video' %>
+	<% end %>
 	</div>
 	<div class="twitter-container">
 		<a class="twitter-timeline" data-width="500" data-dnt="true" data-theme="dark" href=<%= "https://twitter.com/#{@contributor.twitter}" %> >Tweets by<% if @contributor.aka %> <%= @contributor.aka %><% else %> <%= fullname(@contributor) %><% end %></a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
