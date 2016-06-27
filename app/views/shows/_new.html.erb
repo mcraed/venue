@@ -1,7 +1,7 @@
 <div>
 
 	<h2>New Show</h2>
-	<%= form_for @show, url: contributor_shows_path(@contributor.id), multipart: true do |f| %>
+	<%= form_for @show, url: new_show_path, multipart: true do |f| %>
 
 		<div>
 			<%= f.label :name %>
