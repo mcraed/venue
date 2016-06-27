@@ -5,17 +5,19 @@
 		</ul>
 	</div>
 	<div class="homepage-video-container">	
-		<div class="homepage-video-info">
-			<% e = @episode %>
-			<h2><%= truncate("#{e.title}", length: 28) %></h2>
-			<h3><%= truncate("#{e.show.name}", length: 35) %></h3>
-		<div class="homepage-video-img-container">
-			<%= image_tag e.show.image, class: "homepage-video-show-img", width: '200', height: '200' %>
-		</div>
-		</div>
-		<div class="homepage-video">
-			<%= video_tag e.video.url, controls: true, width: '500', height: '250', class: 'homepage-episode' %>
-		</div>
+		<% if @episode %>
+			<div class="homepage-video-info">
+				<% e = @episode %>
+				<h2><%= truncate("#{e.title}", length: 28) %></h2>
+				<h3><%= truncate("#{e.show.name}", length: 35) %></h3>
+			<div class="homepage-video-img-container">
+				<%= image_tag e.show.image, class: "homepage-video-show-img", width: '200', height: '200' %>
+			</div>
+			</div>
+			<div class="homepage-video">
+				<%= video_tag e.video.url, controls: true, width: '500', height: '250', class: 'homepage-episode' %>
+			</div>
+		<% end %>
 	</div>
 	<!-- was in div class show-container -->
 	<div class="show-index-container">
