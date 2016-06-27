@@ -62,6 +62,8 @@ a, a:visited{
 	height: 70vh;
 	background: #000;
 	color: #fff;
+	border-top: 5px outset rgba(39, 40, 34, 1.00);
+	border-bottom: 5px inset rgba(39, 40, 34, 1.00);
 }
 
 .homepage-video-info{
@@ -79,7 +81,7 @@ a, a:visited{
 
 .homepage-video2-info{
 	position: relative;
-	top: -11em;
+	top: -8.5em;
 	left: 2.5em;
 	width: 19em;
 	color: #fff;
@@ -90,6 +92,10 @@ a, a:visited{
 	margin: 2vh 0 1.5vh 0;
 }
 
+.homepage-video2-info img{
+	margin: 2vh 0 0 1.3em;
+	border: 3px outset rgba(39, 40, 34, 1.00);
+}
 
 .homepage-video{
 	width: 70vw;
@@ -105,8 +111,12 @@ a, a:visited{
 
 
 .contributor-instance{	
-	margin: .5vh .8em;
+	margin: .5vh .55em;
 	float: left;
+}
+
+.contributor-instance img{
+	border: 3px outset rgba(39, 40, 34, 1.00);
 }
 
 
@@ -128,7 +138,7 @@ footer{
 }
 
 footer h4{
-	width: 8vw;
+	width: 100vw;
 	margin: 0 0 2vh 3vw;
 }
 

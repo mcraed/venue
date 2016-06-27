@@ -12,7 +12,7 @@ class EpisodesController < ApplicationController
 		if @episode.save
 			@contributor.episodes << @episode
 			flash[:notice] = "Video successfully uploaded"
-			redirect_to episode_path(@episode.id)
+			redirect_to show_path(@show.id)
 		else
 			flash[:alert] = "Failed, video must be in mp4 format."
 			redirect_to show_path(@show.id)

@@ -28,9 +28,11 @@
 	margin: 2vh 0 0 0;
 }
 
-.homepage-video-img-container{
+.homepage-video-info img{
 	margin: 2vh 0 0 1.3em;
+	border: 3px inset rgba(39, 40, 34, 1.00);
 }
+
 
 .homepage-video{
 	width: 70vw;
@@ -69,6 +71,9 @@
 	display: inline-block;
 	margin: .5vh 1em;
 }
+.show-instance img{
+	border: 4px outset rgba(39, 40, 34, 1.00);
+}
 
 .show-container{
 	width: 100vw;
@@ -87,10 +92,15 @@
 
 .show-episode-info{
 	width: 30vw;
-	margin: 0 2em 0 5.5em;
+	margin: 3vh 2em 0 5.5em;
 	display: inline-block;
 	position: relative;
 	bottom: 4.2em;
+}
+
+.show-episode-info img{
+	margin-left: 2em; 
+	border: 4px outset rgba(39, 40, 34, 1.00);
 }
 
 .show-episode-container{

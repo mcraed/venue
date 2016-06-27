@@ -15,6 +15,11 @@
 	float: left;
 }
 
+.cont-show-info img{
+	margin-left: 1.3em;
+	border: 3px outset rgba(39, 40, 34, 1.00);
+}
+
 .cont-show-bio{
 	width: 98vw;
 	margin: 3em auto;
@@ -39,7 +44,8 @@
 	width: 500px;
 	height: 600px;
 	overflow: scroll;
-	margin-bottom: 2em
+	float: right;
+	margin: 0 10em 2em 0;
 }
 
 
