@@ -1,4 +1,5 @@
 source 'https://rubygems.org'
+  
 
 # jquery / jquery-ui
   gem 'jquery-ui-rails'
@@ -59,4 +60,4 @@ group :development do
 end
 
 # To run on heroku
-gem 'rails_12factor', group: :production
+gem 'rails_12factor'
