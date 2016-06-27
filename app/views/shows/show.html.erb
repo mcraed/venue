@@ -14,9 +14,6 @@
 				<br />
 				<%= @show.desc %>
 				<br />
-				<% if @show.contributors.include? current_contributor %>
-					<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
-				<% end %>
 			</div>
 			<div class="show-episode-container">
 				<% if @show.episodes.last %>
