@@ -1,60 +1,37 @@
 <div class="show-wide-container">
-	<header>
-		<div class='nav'>
-			<ul>
-			<div class="logo"></div>
-				<!-- add splash page, then root path will be shows index -->
-				<li><%= link_to "Shows", shows_path, class: "nav-links" %></li>
-				<li><%= link_to "Contributors", contributors_path, class: "nav-links" %></li>
-			</ul>
-			<% if current_user || current_contributor %>
-				<%= link_to "Log Out", logout_path, method: :delete %> 
-			<% end %>
-		</div>
-	</header>
+	<div class='nav'>
+		<ul>
+			<a href="/#shows"><div class="home-logo"></div></a>
+		</ul>
+	</div>
 	<div class="show-container">
-		<div class="logged-info">
-			<% if current_user %>
-				<div>
-					<h4>Logged in as <%= current_user.username %></h4>
-				</div>
-				<li><%= link_to "Home", user_path(current_user.id), class: "nav-links" %></li>
-			<% elsif current_contributor %>
-				<div>
-					<h4>Logged in as <%= fullname(current_contributor) %></h4>
-				</div>
-				<li><%= link_to "Home", contributor_path(current_contributor.id) %></li>
-			<% else %>
-				<div class="sign-up-prompt">
-					<h4><%= link_to "Log in/Sign up", root_path %> For Exclusive Contests, Events, Promotions, and More!</h4>
-				</div>	
-			<% end %>	
-		</div>
-		<div class="show-show-info">
-			<h2><%= @show.name %></h2>
-			<%= image_tag @show.image.url(:medium) %>
-			<br />
-			<br />
-			<%= @show.desc %>
-			<br />
-			<% if @show.contributors.include? current_contributor %>
-				<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
-			<% end %>
-		</div>
-		<div class="show-latest-episode-container">
-			<h2>Latest Episode</h2>
-			<% if @show.episodes.last %>
-				<div class='show-latest-episode-title'>
-					<%= link_to "#{@show.episodes.last.title}",episode_path(@show.episodes.last.id) %> 
-				</div>
-				<div class="show-latest-episode">
-					<%= video_tag @show.episodes.last.video.url, width: '600', height: '300', controls: true %>
-				</div>
-			<% else %>
+		<div class="show-show-episode-container">
+			<div class="show-episode-info">
+				<h2><%= @show.name %></h2>
 				<br />
-				<h3>Stay tuned for <%= @show.name %> episode one!</h3>
-			<% end %>
+				<%= image_tag @show.image.url(:medium) %>
+				<br />
+				<br />
+				<%= @show.desc %>
+				<br />
+				<% if @show.contributors.include? current_contributor %>
+					<%= link_to "Edit Show Info", edit_show_path(@show.id) %>
+				<% end %>
+			</div>
+			<div class="show-episode-container">
+				<% if @show.episodes.last %>
+					<div class='show-episode-title'>
+						<%= link_to "#{@show.episodes.last.title}",episode_path(@show.episodes.last.id) %> 
+					</div>
+					<%= video_tag @show.episodes.last.video.url, width: '600', height: '400', controls: true, class: 'show-latest-episode' %>
+				<% else %>
+					<br />
+					<h3>Stay tuned for <%= @show.name %> episode one!</h3>
+				<% end %>
+			</div>
 		</div>
-		<br clear="all" />
+		<div class="show-create-container">
+			<%= render 'episodes/new' %>
+		</div>
 	</div>
 </div>

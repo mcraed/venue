@@ -14,6 +14,12 @@
 	background: #000;
 }
 
+.new-episode-container{
+	width: 100vw;
+	height: 53.3vh;
+	background: url('new-epi-form.jpg') no-repeat center center fixed;
+}
+
 .episode-video{
 	position: relative;
 	width: 950px;
@@ -24,4 +30,34 @@
 	position: absolute;
 	bottom: 23em;
 	left: 3em;
+}
+
+.new-episode-label{
+	padding-left: 2em; 
+	font-size: 3em;
+}
+
+.field{
+	width: 18em;
+	padding: 1em;
+	margin: 5em 0 0 3em;
+	display: inline-block;
+	background: rgba(33, 48, 216, .8);
+	border-radius: 28px 28px 28px ;
+}
+
+.field h4{
+	font-size: 1.7em;
+}
+
+.submit{
+	width: 2em;
+	height: 2em;
+	background: rgba(33, 48, 216, .4);
+	color: #fff;
+	font-size: 1.5em;
+	border-radius: 50%;
+	position: relative;
+	top: 2em;
+	left: 24.8em;
 }

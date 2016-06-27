@@ -1,18 +1,9 @@
 <div class="show-wide-container">
-	<header>
-		<div class='nav'>
-			<ul>
-			<div class="logo"></div>
-			<div class="nav-link-container">
-				<li><%= link_to "Shows", shows_path %></li>
-				<li><%= link_to "Contributors (Development)", root_path %></li>
-			</div>
-			</ul>
-			<% if current_user || current_contributor %>
-				<%= link_to "Log Out", logout_path, method: :delete %> 
-			<% end %>
-		</div>
-	</header>
+	<div class='nav'>
+		<ul>
+			<a href="/"><div class="home-logo"></div></a>
+		</ul>
+	</div>
 	<div class="homepage-video-container">	
 		<div class="homepage-video-info">
 			<% e = @episode %>

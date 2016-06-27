@@ -1,20 +1,17 @@
-<%= form_for @episode, url: show_episodes_path(@show.id), multipart: true do |f| %>
+<div class="new-episode-container">
+  <%= form_for @episode, url: show_episodes_path(@show.id), multipart: true do |f| %>
+    
+    <div class="field">
+      <h4>Title</h4>
+      <%= f.text_field :title, class: "field-input" %>
+      <h4>Description</h4>
+      <%= f.text_field :description, class: "field-input" %>
+      <br />
+      <br />
+      <%= f.file_field :video %>
+    </div>
 
-  <div class="field">
-
-    <%= f.label :title %>
-    <%= f.text_field :title %>
-  </div>
-  <div class="field">
-    <%= f.label :description %>
-    <%= f.text_field :description %>
-  </div>
-  <div class="field">
-    <%= f.label :video %>
-    <%= f.file_field :video %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
-    <%= link_to 'Cancel', root_path, class: 'button' %>
-  </div>
-<% end %>
+    <%= f.submit "!", class: "submit" %>
+   
+  <% end %>
+</div>

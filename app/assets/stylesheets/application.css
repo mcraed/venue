@@ -24,6 +24,10 @@
  	background: url('empty-studio1.jpg') no-repeat center center fixed;
  }
 
+ .app-container{
+	font-family: 'Varela', sans-serif;
+ }
+
 .logo{
 	width: 5em;
 	height: 5em;
@@ -42,8 +46,9 @@ a:hover{
 	width: 27px; 
 }
 .nav ul{
- list-style: none;
+	list-style: none;
 	padding-bottom: .5em;
+	height: 15vh;
 }
 
 .nav li{

@@ -1,17 +1,8 @@
 <header>
 	<div class='nav'>
 		<ul>
-			<div class="home-logo"></div>
-			<div class="nav-link-container">
-				<li><%= link_to "Shows", shows_path, class: "home-nav-links" %></li>
-				<li><%= link_to "Contributors", contributors_path, class: "home-nav-links" %></li>
-			</div>
+			<a href="/#shows"><div class="home-logo"></div></a>
 		</ul>
-		<div class="home-logout">
-			<% if current_user || current_contributor %>
-				<%= link_to "Log Out", logout_path, method: :delete %> 
-			<% end %>
-		</div>
 	</div>
 	<div class="logged-info">
 		<% if current_user %>

@@ -23,6 +23,7 @@ class ShowsController < ApplicationController
   def show
   	@show = Show.find(params[:id])
     @episode = Episode.new
+    @contributor = current_contributor
   end
   
   def index

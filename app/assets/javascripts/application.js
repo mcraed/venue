@@ -15,3 +15,16 @@
 //= require jquery-ui
 //= require turbolinks
 //= require_tree .
+
+$(document).ready(function(){
+
+	$('.home-logo').mouseover(function(){
+		$(this).css("width", "5.2em");
+		$(this).css("height", "5.2em");
+	});
+
+	$('.home-logo').mouseleave(function(){
+		$(this).css("width", "5em");
+		$(this).css("height", "5em");
+	});
+});
