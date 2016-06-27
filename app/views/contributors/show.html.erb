@@ -42,11 +42,13 @@
 		</div>
 		<div>
 			<h2>Shows</h2>
-			<% @contributor.shows.each do |s| %>
-				<div>
-					<h4><%= link_to Show.find(s.id).name, show_path(s.id) %></h4>
-					<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url, width: '150', height: '150' %> </a>
-				</div>
+			<% if @contributor.shows %>
+				<% @contributor.shows.each do |s| %>
+					<div>
+						<h4><%= link_to Show.find(s.id).name, show_path(s.id) %></h4>
+						<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url, width: '150', height: '150' %> </a>
+					</div>
+				<% end %>
 			<% end %>
 		</div>
 		<% if current_contributor == @contributor %>
