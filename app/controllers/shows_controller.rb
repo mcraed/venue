@@ -11,9 +11,8 @@ class ShowsController < ApplicationController
     @contributor = current_contributor
 
 		if @show.save
-      @contributor.shows << @show
 			flash[:notice] = "Success"
-			redirect_to edit_show_path(@show)
+			redirect_to show_path(@show)
 		else
 			flash[:alert] = "Failed"
 			render 'new'
