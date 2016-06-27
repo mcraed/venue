@@ -40,17 +40,7 @@
 				<h4><%= @contributor.bio %></h4>
 			</div>
 		</div>
-		<div>
-			<h2>Shows</h2>
-			<% if @contributor.shows %>
-				<% @contributor.shows.each do |s| %>
-					<div>
-						<h4><%= link_to Show.find(s.id).name, show_path(s.id) %></h4>
-						<a href=<%= show_path(s.id) %> > <%= image_tag Show.find(s.id).image.url, width: '150', height: '150' %> </a>
-					</div>
-				<% end %>
-			<% end %>
-		</div>
+		<!-- contributor.shows index would go here -->
 		<% if current_contributor == @contributor %>
 			<div>
 				<%= render 'shows/new' %>
