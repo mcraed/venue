@@ -24,14 +24,6 @@ ActiveRecord::Schema.define(version: 20160621082202) do
   add_index "contributor_episodes", ["contributor_id"], name: "index_contributor_episodes_on_contributor_id", using: :btree
   add_index "contributor_episodes", ["episode_id"], name: "index_contributor_episodes_on_episode_id", using: :btree
 
-  create_table "contributor_shows", force: :cascade do |t|
-    t.integer "contributor_id"
-    t.integer "show_id"
-  end
-
-  add_index "contributor_shows", ["contributor_id"], name: "index_contributor_shows_on_contributor_id", using: :btree
-  add_index "contributor_shows", ["show_id"], name: "index_contributor_shows_on_show_id", using: :btree
-
   create_table "contributors", force: :cascade do |t|
     t.string   "fname"
     t.string   "lname"
@@ -73,22 +65,6 @@ ActiveRecord::Schema.define(version: 20160621082202) do
 
   add_index "likes", ["episode_id"], name: "index_likes_on_episode_id", using: :btree
   add_index "likes", ["user_id"], name: "index_likes_on_user_id", using: :btree
-
-  create_table "show_likes", force: :cascade do |t|
-    t.integer "users_id"
-    t.integer "shows_id"
-  end
-
-  add_index "show_likes", ["shows_id"], name: "index_show_likes_on_shows_id", using: :btree
-  add_index "show_likes", ["users_id"], name: "index_show_likes_on_users_id", using: :btree
-
-  create_table "show_tags", force: :cascade do |t|
-    t.integer "show_id_id"
-    t.integer "tag_id_id"
-  end
-
-  add_index "show_tags", ["show_id_id"], name: "index_show_tags_on_show_id_id", using: :btree
-  add_index "show_tags", ["tag_id_id"], name: "index_show_tags_on_tag_id_id", using: :btree
 
   create_table "shows", force: :cascade do |t|
     t.string   "name"
