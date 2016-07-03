@@ -1,7 +1,7 @@
 <div>
 
 	<h2>New Show</h2>
-	<%= form_for @show, multipart: true do |f| %>
+	<%= form_for [@contributor, @show], multipart: true do |f| %>
 
 		<div>
 			<%= f.label :name %>

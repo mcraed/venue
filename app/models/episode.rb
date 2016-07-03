@@ -12,7 +12,8 @@ class Episode < ActiveRecord::Base
   		geometry: '300x300>', format: 'jpg', time: 10
   	}, 
   },
-  procesors: [:transcoder], 
+  
+  # processors: [:transcoder], 
   storage: :s3,
   s3_credentials: {
     bucket: ENV['S3_BUCKET_NAME'],

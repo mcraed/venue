@@ -10,12 +10,14 @@ class ShowsController < ApplicationController
 		@show = Show.new(show_params)
     @contributor = current_contributor
 
-		if @show.save
+		if @show
+      @contributor.shows << @show
+      @show.save
 			flash[:notice] = "Success"
-			redirect_to show_path(@show)
+			redirect_to contributor_path(@contributor)
 		else
 			flash[:alert] = "Failed"
-			render 'new'
+			redirect_to contributor_path(@contributor)
 		end
 	end
 

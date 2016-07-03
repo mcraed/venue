@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160621082202) do
+ActiveRecord::Schema.define(version: 20160702205659) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -23,6 +23,14 @@ ActiveRecord::Schema.define(version: 20160621082202) do
 
   add_index "contributor_episodes", ["contributor_id"], name: "index_contributor_episodes_on_contributor_id", using: :btree
   add_index "contributor_episodes", ["episode_id"], name: "index_contributor_episodes_on_episode_id", using: :btree
+
+  create_table "contributor_shows", force: :cascade do |t|
+    t.integer "contributor_id"
+    t.integer "show_id"
+  end
+
+  add_index "contributor_shows", ["contributor_id"], name: "index_contributor_shows_on_contributor_id", using: :btree
+  add_index "contributor_shows", ["show_id"], name: "index_contributor_shows_on_show_id", using: :btree
 
   create_table "contributors", force: :cascade do |t|
     t.string   "fname"

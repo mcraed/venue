@@ -28,7 +28,21 @@
 				<h4><%= @contributor.bio %></h4>
 			</div>
 		</div>
-		<!-- contributor.shows index would go here -->
+		<div class="show-index">
+			<% @contributor.shows.each do |show| %>
+				<a href="/shows/#{show.id}">
+					<div class="show-instance">
+						<%= image_tag show.image.url(:thumb) %>
+						<h4><%= show.name %></h4>
+					</div>
+				</a>
+			<% end %>
+			<div>
+				<h1><%= fullname(@contributor) %></h1>
+				<h4>No shows yet!</h4>
+			</div>	
+		</div>
+
 		<% if current_contributor == @contributor %>
 			<div>
 				<%= render 'shows/new' %>
